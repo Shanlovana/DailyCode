@@ -26,6 +26,7 @@ public class MainActivity {
         staticProxy();
         dynamicProxy();
         dynamicProxyFactory();
+        dynamicCglibProxy();
     }
 
     @SuppressWarnings("this method deprecation")
@@ -96,5 +97,11 @@ public class MainActivity {
         SauerkrautRest rest = new SauerkrautRest();
         Restaurant restaurant = (Restaurant) new ProxyFactory(rest).getProxyInstance();
         restaurant.eatFan();
+    }
+
+    public static void dynamicCglibProxy() {
+        Animal animal = new Animal();
+        Animal proxy = (Animal) new CgLibProxyFactory(animal).getProxyInstance();
+        proxy.ying();
     }
 }
