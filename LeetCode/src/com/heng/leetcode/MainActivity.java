@@ -4,6 +4,10 @@ import com.heng.leetcode.algorithms.LeetAlogorithms;
 
 public class MainActivity {
     public static void main(String[] args) {
+        twoNum();
+    }
+
+    public static void twoNum() {
         int[] array = new int[]{1, 3, 5, 7, 9};
         //array = LeetAlogorithms.twoSum(array, 12);
         array = LeetAlogorithms.twoSumTwo(array, 12);

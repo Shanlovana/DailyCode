@@ -4,10 +4,13 @@ import com.heng.subhey.annotation.CheckOutTool;
 import com.heng.subhey.annotation.Chou;
 import com.heng.subhey.annotation.Liming;
 import com.heng.subhey.annotation.Person;
+import com.heng.subhey.proxy.*;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,6 +23,9 @@ public class MainActivity {
         getAnnotation();
         getField();
         CheckOutTool.checkAll();
+        staticProxy();
+        dynamicProxy();
+        dynamicProxyFactory();
     }
 
     @SuppressWarnings("this method deprecation")
@@ -68,5 +74,27 @@ public class MainActivity {
             System.out.println("NoSuchMethodException");
         }
 
+    }
+
+
+    public static void staticProxy() {
+        UserDaoProxy userDaoProxy = new UserDaoProxy(new UserDao());
+        userDaoProxy.addRecord();
+
+    }
+
+    public static void dynamicProxy() {
+        SauerkrautRest sauerkrautRest = new SauerkrautRest();
+        InvocationHandler invocationHandler = new PlaceForSell(sauerkrautRest);
+        Restaurant sauerkRest = (Restaurant) Proxy.newProxyInstance(SauerkrautRest.class.getClassLoader(),
+                SauerkrautRest.class.getInterfaces(), invocationHandler);
+        // Proxy.newProxyInstance(target.getClass.getClassLoader(),target.getClass.getInterfaces(), invocationHandler); 第一二个参数皆为target
+        sauerkRest.eatFan();
+    }
+
+    public static void dynamicProxyFactory() {
+        SauerkrautRest rest = new SauerkrautRest();
+        Restaurant restaurant = (Restaurant) new ProxyFactory(rest).getProxyInstance();
+        restaurant.eatFan();
     }
 }
