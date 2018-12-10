@@ -5,6 +5,7 @@ import com.heng.leetcode.algorithms.LeetAlogorithms;
 public class MainActivity {
     public static void main(String[] args) {
         twoNum();
+        shaDiaoWangYou();
     }
 
     public static void twoNum() {
@@ -16,5 +17,13 @@ public class MainActivity {
             result.append(" " + i);
         }
         System.out.println(result);
+    }
+
+    private static void shaDiaoWangYou() {
+        int num = 0;
+        for (int i = 0; i < 100; i++) {
+            num = ++num;// num+=num   num=num++      has diff result
+        }
+        System.out.println(num);
     }
 }

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import ming.com.andcode.jni.JNIManage;
 import ming.com.andcode.mvp.MVPActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
         tv_mvp = findViewById(R.id.tv_entry_mvp);
-        tv.setText(stringFromJNI());
+        tv.setText(JNIManage.getInstance().getNums());
         setOnClicks();
     }
 
@@ -33,10 +34,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
 }

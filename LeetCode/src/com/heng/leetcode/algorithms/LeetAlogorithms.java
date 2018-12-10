@@ -33,4 +33,9 @@ public class LeetAlogorithms {
 
         throw new IllegalArgumentException("No two sum solution can reach target");
     }
+
+    public static void addTwoNums(){
+
+
+    }
 }
