@@ -3,11 +3,11 @@
 #include <float.h>
 
 int main() {
-    int a = 3895;
+   /* int a = 3895;
     int b = 2547;
     int c;
     int d;
-    /*this is my first c program*/
+    *//*this is my first c program*//*
     printf("Hello, World!\n");
     printf("3895 * 2547 = %d\n", (a * b));
     printf("c=%d\n", c);
@@ -19,9 +19,9 @@ int main() {
     int e, f, g;
     puts("please input three nums ,split with ,");
     scanf("%d%d%d", &e, &f, &g);
-    printf("e = %d,f = %d,g = %d", e, f, g);//this place has some errors,i will check it out later;
-
-    printf("long size is : %lu \n", sizeof(long double));
+    printf("e = %d,f = %d,g = %d", e, f, g);//this place has some errors,i will check it out later;*/
+    printf("int size is : %lu \n", sizeof(int));
+    printf("long size is : %lu \n", sizeof(double));
     printf("float 存储最大字节数 : %lu \n", sizeof(float));
     printf("float 最小值: %E\n", FLT_MIN );
     printf("float 最大值: %E\n", FLT_MAX );
