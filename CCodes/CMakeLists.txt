@@ -3,4 +3,4 @@ project(CCodes C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CCodes com.ming.code/main.c)
+add_executable(CCodes com.ming.code/main.c com.ming.code/support.c)
