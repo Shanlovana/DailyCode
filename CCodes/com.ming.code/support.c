@@ -595,7 +595,7 @@ void file_input() {
     file = fopen("C:\\Users\\Lenovo\\Desktop\\forctest.txt", "a+");
     fprintf(file, "This is testing for fprintf...\n");
     fseek(file, 10, SEEK_SET);
-    if (fputc(65,file) == EOF) {
+    if (fputc(65, file) == EOF) {
         printf("fputc fail");
     }
     fputs("This is testing for fputs...\n", file);
@@ -619,3 +619,29 @@ void file_output() {
     fclose(file);
 }
 
+void macros_predefined() {
+    printf("File :%s\n", __FILE__);
+    printf("Date :%s\n", __DATE__);
+    printf("Time :%s\n", __TIME__);
+    printf("Line :%d\n", __LINE__);
+    printf("ANSI :%d\n", __STDC__);
+}
+
+void convert_data() {
+    int sum = 17, count = 5;
+    double mean;
+    mean = (double) sum / count;
+    printf("Value of mean : %f\n", mean);
+    int  i = 17;
+    char c = 'c'; /* ascii 值是 99 */
+    int sume;
+
+    sume = i + c;
+    printf("Value of sume : %d\n", sume );
+    int  j = 17;
+    char k = 'c'; /* ascii 值是 99 */
+    float sumes;
+
+    sumes = j + k;
+    printf("Value of sumes : %f\n", sumes );
+}

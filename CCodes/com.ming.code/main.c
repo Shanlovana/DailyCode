@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>
+//#include "operatorhead.h"
+#ifndef HEADER_FILE
+#define HEADER_FILE
+
+#include "operatorhead.h"
+
+#endif
 
 static int count = 10;
 int conbas;
@@ -87,10 +94,26 @@ extern void file_input();
 
 extern void file_output();
 
+extern void macros_predefined();
+
+extern void convert_data();
+
+extern void error_deal();
+
+#define  message_for(a, b)  \
+    printf(#a " and " #b ": We love you!\n")
+
+#define tokenpaste(n) printf ("token" #n " = %d", token##n)
+
+#if !defined (MESSAGE)
+#define MESSAGE "You wish!"
+#endif
+
 enum {
     Q, W, E = 4, R
 };
 
+int token998 = 98;
 
 int main() {
     /*test_print();
@@ -132,8 +155,15 @@ int main() {
     //print_float();
     //print_all_you_put();
     //input_notice();
-    file_input();
+    //file_input();
     //file_output();
+    //macros_predefined();
+    // message_for(ErGouZi, DaMao);
+    //tokenpaste(998);
+    // printf("Here is the message: %s\n", MESSAGE);
+    //hello();
+    //convert_data();
+    error_deal();
     return 0;
 }
 
