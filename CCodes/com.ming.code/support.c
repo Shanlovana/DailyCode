@@ -3,11 +3,16 @@
 //
 #include <stdio.h>
 #include <float.h>
+#include <stdlib.h>
+#include <string.h>
 
 extern int conbas;
 #define LENGTH 10
 #define WIDTH  5
 #define NEWLINE '\n'
+
+
+int get_random_value();
 
 void writen_extern(void) {
     printf("conbas is %d\n", conbas);
@@ -65,13 +70,14 @@ void test_print(void) {
     printf("c=%d\n", c);
     printf("d=%d\n", d);
     int num = -9527;
-    /*puts("please input a num");
+    puts("please input a num");
     scanf("%d", &num);
     printf("the num you input is ", num);
     int e, f, g;
-    puts("please input three nums ,split with ,");
+    puts("please input three nums ");
     scanf("%d%d%d", &e, &f, &g);
-    printf("e = %d,f = %d,g = %d", e, f, g);//this place has some errors,i will check it out later;*/
+    printf("e = %d,f = %d,g = %d", e, f, g);//this place has some errors,i will check it out later;
+    //2018.12.13  不要用,作为分隔   以空格键作为分隔即可正常运行
     printf("int size is : %lu \n", sizeof(int));
     printf("long size is : %lu \n", sizeof(double));
     printf("float size : %lu \n", sizeof(float));
@@ -357,7 +363,7 @@ int *getRandom(void) {
     return r;
 }
 
-void pointer_array(){
+void pointer_array() {
     /* 带有 5 个元素的整型数组 */
     double balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
     double *p;
@@ -366,15 +372,250 @@ void pointer_array(){
     p = balance;
 
     /* 输出数组中每个元素的值 */
-    printf( "use pointer \n");
-    for ( i = 0; i < 5; i++ )
-    {
-        printf("*(p + %d) : %f\n",  i, *(p + i) );
+    printf("use pointer \n");
+    for (i = 0; i < 5; i++) {
+        printf("*(p + %d) : %f\n", i, *(p + i));
     }
 
-    printf( "use balance as pointer \n");
-    for ( i = 0; i < 5; i++ )
-    {
-        printf("*(balance + %d) : %f\n",  i, *(balance + i) );
+    printf("use balance as pointer \n");
+    for (i = 0; i < 5; i++) {
+        printf("*(balance + %d) : %f\n", i, *(balance + i));
     }
 }
+
+int get_random_value() {
+    return rand();
+}
+
+void assignment_array(int *array, size_t arraySize, int(*get_dom_value(void))) {
+    //从此处可以看出   函数指针作为某个函数的参数   时，方法名称不需一一对应
+    for (size_t i = 0; i < arraySize; i++) {
+        array[i] = get_dom_value();
+    }
+
+}
+
+void string_test() {
+    char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+    printf("Greeting message: %s\n", greeting);
+
+    char str1[12] = "Hello";
+    char str2[12] = "World";
+    char str3[12];
+    int len;
+
+    /* 复制 str1 到 str3 */
+    strcpy(str3, str1);
+    printf("strcpy( str3, str1) :  %s\n", str3);
+
+    /* 连接 str1 和 str2 */
+    strcat(str1, str2);
+    printf("strcat( str1, str2):   %s\n", str1);
+
+    /* 连接后，str1 的总长度 */
+    len = strlen(str1);
+    printf("strlen(str1) :  %d\n", len);
+}
+
+struct Books {
+    char title[50];
+    char author[50];
+    char subject[100];
+    int book_id;
+} book = {"C ", "RUNOOB", "programa laguege", 123456};
+
+void book_init() {
+    printf("title : %s\nauthor: %s\nsubject: %s\nbook_id: %d\n", book.title, book.author, book.subject, book.book_id);
+}
+
+void print_book(struct Books book) {
+    printf("Book title : %s\n", book.title);
+    printf("Book author : %s\n", book.author);
+    printf("Book subject : %s\n", book.subject);
+    printf("Book book_id : %d\n", book.book_id);
+}
+
+void print_books(struct Books *book) {
+    printf("Book title : %s\n", book->title);
+    printf("Book author : %s\n", book->author);
+    printf("Book subject : %s\n", book->subject);
+    printf("Book book_id : %d\n", book->book_id);
+}
+
+void book_set() {
+    struct Books Book1;        /* 声明 Book1，类型为 Books */
+    struct Books Book2;        /* 声明 Book2，类型为 Books */
+
+    /* Book1 详述 */
+    strcpy(Book1.title, "C Programming");
+    strcpy(Book1.author, "Nuha Ali");
+    strcpy(Book1.subject, "C Programming Tutorial");
+    Book1.book_id = 6495407;
+
+    /* Book2 详述 */
+    strcpy(Book2.title, "Telecom Billing");
+    strcpy(Book2.author, "Zara Ali");
+    strcpy(Book2.subject, "Telecom Billing Tutorial");
+    Book2.book_id = 6495700;
+
+    /* 输出 Book1 信息 */
+    //print_book(Book1);
+    print_books(&Book1);
+
+    /* 输出 Book2 信息 */
+    //print_book(Book2);
+    print_books(&Book2);
+}
+
+void test_bit_field() {
+    struct bs {
+        unsigned a:1;
+        unsigned b:3;
+        unsigned c:4;
+    } bit, *pbit;
+    bit.a = 1;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+    bit.b = 7;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+    bit.c = 15;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+    printf("%d,%d,%d\n", bit.a, bit.b, bit.c);    /* 以整型量格式输出三个域的内容 */
+    pbit = &bit;    /* 把位域变量 bit 的地址送给指针变量 pbit */
+    pbit->a = 0;    /* 用指针方式给位域 a 重新赋值，赋为 0 */
+    pbit->b &= 3;    /* 使用了复合的位运算符 "&="，相当于：pbit->b=pbit->b&3，位域 b 中原有值为 7，与 3 作按位与运算的结果为 3（111&011=011，十进制值为 3） */
+    pbit->c |= 1;    /* 使用了复合位运算符"|="，相当于：pbit->c=pbit->c|1，其结果为 15 */
+    printf("%d,%d,%d\n", pbit->a, pbit->b, pbit->c);    /* 用指针方式输出了这三个域的值 */
+}
+
+struct person {
+    char name[20];
+    int count;
+
+} leader[3] = {{"Li",    0},
+               {"Zhang", 0},
+               {"Fun",   0}};
+
+void struct_array() {
+    int i, j;
+    char leader_name[20];
+    for (i = 1; i <= 5; i++) {
+        printf("please input names:");
+        scanf("%s", leader_name);
+        for (j = 0; j < 3; j++)
+            if (strcmp(leader_name, leader[j].name) == 0)
+                leader[j].count++;
+    }
+    printf("\n");
+    for (i = 0; i < 3; i++)
+        printf("%5s: %d\n", leader[i].name, leader[i].count);
+    system("pause");
+}
+
+union Data {
+    int i;
+    float f;
+    char str[9];
+};
+
+void union_size() {
+    union Data data;
+    printf("Memory size occupied by data : %d\n", sizeof(data));
+}
+
+void get_union_mem() {
+    union Data data;
+    data.i = 1024;
+    printf("data.i : %d\n", data.i);
+    data.f = 2298.5;
+    printf("data.f : %f\n", data.f);
+    strcpy(data.str, "C Programming");
+    printf("data.str : %s\n", data.str);
+}
+
+struct {
+    unsigned int widthValidated;
+    unsigned int heightValidated;
+} status;
+
+struct {
+    unsigned int widthValidated : 1;
+    unsigned int heightValidated : 1;
+} statuse;
+
+struct {
+    int widthValidated : 8;
+    int heightValidated : 2;
+    int heighVali : 3;
+} statusel;
+
+struct {
+    int widthValidated : 8;
+    char heigh: 5;
+    long width : 3;
+} statusell;
+
+void print_mem_size() {
+    printf("Memory size occupied by status : %d\n", sizeof(status));
+    printf("Memory size occupied by statuse : %d\n", sizeof(statuse));
+    printf("Memory size occupied by statuse : %d\n", sizeof(statusel));
+    printf("Memory size occupied by statuse : %d\n", sizeof(statusell));
+    printf("Memory size occupied by long : %d\n", sizeof(long));
+
+}
+
+void print_float() {
+    float f;
+    printf("Enter a float number: ");
+    // %f 匹配浮点型数据
+    scanf("%f", &f);
+    printf("Value = %f", f);
+}
+
+void print_all_you_put() {
+    char str[100];
+
+    printf("Enter a value :");
+    gets(str);
+
+    printf("\nYou entered: ");
+    puts(str);
+}
+
+void input_notice() {
+    int a;
+    float x;
+    char c1;
+    printf("please input int float char \n");
+    scanf("a=%d", &a);
+    scanf("x=%f", &x);
+    scanf("c1=%c", &c1);
+    printf("a=%d,x=%f,c1=%c\n", a, x, c1);
+}
+
+void file_input() {
+    FILE *file = NULL;
+    char buff[255];
+    file = fopen("C:\\Users\\Lenovo\\Desktop\\forctest.txt", "a+");
+    fprintf(file, "This is testing for fprintf...\n");
+    fseek(file, 10, SEEK_SET);
+    if (fputc(65,file) == EOF) {
+        printf("fputc fail");
+    }
+    fputs("This is testing for fputs...\n", file);
+
+    fclose(file);
+}
+
+void file_output() {
+    FILE *file = NULL;
+    char buff[255];
+    file = fopen("C:\\Users\\Lenovo\\Desktop\\forctest.txt", "r");
+    fscanf(file, "%s", buff);
+    printf("1: %s\n", buff);
+
+    fgets(buff, 255, (FILE *) file);
+    printf("2: %s\n", buff);
+
+    fgets(buff, 255, (FILE *) file);
+    printf("3: %s\n", buff);
+
+    fclose(file);
+}
+

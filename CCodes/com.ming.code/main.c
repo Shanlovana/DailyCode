@@ -53,12 +53,47 @@ extern void pointer_array();
 
 void test_get_average();
 
+void test_function_pointer();
+
+extern void assignment_array(int *array, size_t arraySize, int (*getrandom_value)(void));
+
+extern int get_random_value();
+
+void test_assignment_array();
+
+extern void string_test();
+
+extern void book_init();
+
+extern void book_set();
+
+extern void test_bit_field();
+
+void union_size();
+
+void get_union_mem();
+
+extern void print_mem_size();
+
+extern void print_float();
+
+extern void struct_array();
+
+extern void print_all_you_put();
+
+extern void input_notice();
+
+extern void file_input();
+
+extern void file_output();
+
 enum {
     Q, W, E = 4, R
 };
 
+
 int main() {
-    test_print();
+    /*test_print();
     test_variable();//全局变量与局部变量
     printf("count is %d\n", count);//查看全局变量打印
     while (count--) {
@@ -83,7 +118,22 @@ int main() {
     test_get_average();
     get_random_tesla();
     pointer_array();
-    printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);
+    printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);*/
+    // test_function_pointer();
+    //test_assignment_array();
+    //string_test();
+    // book_init();
+    //book_set();
+    //test_bit_field();
+    //struct_array();
+    //union_size();
+    //get_union_mem();
+    //print_mem_size();
+    //print_float();
+    //print_all_you_put();
+    //input_notice();
+    file_input();
+    //file_output();
     return 0;
 }
 
@@ -130,4 +180,25 @@ void get_random_tesla() {
         printf("*(p + %d) : %d\n", i, *(p + i));
     }
 
+}
+
+void test_function_pointer() {
+    /* p 是函数指针 */
+    int (*p)(int, int) = &max_num; // &可以省略
+    int a, b, c, d;
+    printf("please input three nums:");
+    scanf("%d %d %d", &a, &b, &c);
+    /* 与直接调用函数等价，d = max(max(a, b), c) */
+    d = p(p(a, b), c);
+
+    printf("max num is : %d\n", d);
+}
+
+void test_assignment_array() {
+    int myarray[10];
+    assignment_array(myarray, 10, get_random_value);
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", myarray[i]);
+    }
+    printf("\n");
 }
