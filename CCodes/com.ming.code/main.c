@@ -100,6 +100,17 @@ extern void convert_data();
 
 extern void error_deal();
 
+extern double factorial(unsigned int);
+
+extern int fabonaci(int);
+
+extern double average_nums(int num, ...);
+
+extern int changeable_varity(char *msg, ...);
+
+extern void dynamic_allocation_memory();
+
+
 #define  message_for(a, b)  \
     printf(#a " and " #b ": We love you!\n")
 
@@ -163,7 +174,14 @@ int main() {
     // printf("Here is the message: %s\n", MESSAGE);
     //hello();
     //convert_data();
-    error_deal();
+    //error_deal();
+    double a = factorial(10);
+    int b = fabonaci(10);
+    //printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
+    double c = average_nums(5, 1, 600, 5, 7, 9);
+    // printf(" average_nums 5 is %f ",c);
+    changeable_varity("FAKER","what", "are", "you", "nong", "sha", "lei","/0");
+    dynamic_allocation_memory();
     return 0;
 }
 
