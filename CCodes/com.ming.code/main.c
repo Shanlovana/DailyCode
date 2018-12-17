@@ -110,7 +110,8 @@ extern int changeable_varity(char *msg, ...);
 
 extern void dynamic_allocation_memory();
 
-
+extern void bubble_sort();
+extern void selection_sort();
 #define  message_for(a, b)  \
     printf(#a " and " #b ": We love you!\n")
 
@@ -175,13 +176,15 @@ int main() {
     //hello();
     //convert_data();
     //error_deal();
-    double a = factorial(10);
-    int b = fabonaci(10);
-    //printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
-    double c = average_nums(5, 1, 600, 5, 7, 9);
-    // printf(" average_nums 5 is %f ",c);
-    changeable_varity("FAKER","what", "are", "you", "nong", "sha", "lei","/0");
-    dynamic_allocation_memory();
+    /* double a = factorial(10);
+     int b = fabonaci(10);
+     printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
+     double c = average_nums(5, 1, 600, 5, 7, 9);
+     printf(" average_nums 5 is %f ", c);
+     changeable_varity("FAKER", "what", "are", "you", "nong", "sha", "lei", "/0");
+     dynamic_allocation_memory();*/
+    //bubble_sort();
+    selection_sort();
     return 0;
 }
 
@@ -250,3 +253,4 @@ void test_assignment_array() {
     }
     printf("\n");
 }
+
