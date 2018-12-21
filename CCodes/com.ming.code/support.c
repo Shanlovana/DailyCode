@@ -5,6 +5,7 @@
 #include <float.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 extern int conbas;
 #define LENGTH 10

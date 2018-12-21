@@ -165,7 +165,7 @@ void *accept_request(void *fron_client) {
  *             path to the CGI script */
 /**********************************************************************/
 //执行cgi动态解析
-void excute_cgi(int client, const char *path, const char *method, const char *query_string) {
+void execute_cgi(int client, const char *path, const char *method, const char *query_string) {
     char buf[1024];
     int cgi_output[2];//声明的读写管道，会给出图进行说明
     int cgi_input[2];
@@ -358,7 +358,7 @@ int get_line(int sock, char *buf, int size) {
 // 监听套接字端口既可以指定也可以动态分配一个随机端口
 int startup(u_short *port) {
     int httpd = 0;
-    struct socketaddr_in name;
+    struct sockaddr_in name;
     // 创建一个socket，建立socket连接
     httpd = socket(PF_INET, SOCK_STREAM, 0);
     if (httpd == -1) {
@@ -383,7 +383,7 @@ int startup(u_short *port) {
         // 进行通信时比较有用（如多网卡的情况）
         if (getsockname(httpd, (struct sockaddr *) &name, &namelen) == -1) {
             error_die("getsockname");
-            *port = ntohs(name.sin_port)
+            *port = ntohs(name.sin_port);
         }
     }
     if (listen(httpd, 5) < 0) {
@@ -503,7 +503,7 @@ void cannot_execute(int client) {
  *             the name of the file to serve */
 /**********************************************************************/
 //将请求的文件发送回浏览器客户端
-void serve_file(int client, const char *filename) {
+void server_file(int client, const char *filename) {
     FILE *resource = NULL;
     int numchars = 1;
     char buf[1024];
@@ -544,4 +544,24 @@ void cat(int client, FILE *resource) {
         fgets(buf, sizeof(buf), resource);
 
     }
+}
+
+/**********************************************************************/
+/* Return the informational HTTP headers about a file. */
+/* Parameters: the socket to print the headers on
+ *             the name of the file */
+/**********************************************************************/
+void headers(int client, const char *filename)
+{
+    char buf[1024];
+    (void)filename;  /* could use filename to determine file type */
+//发送HTTP头
+    strcpy(buf, "HTTP/1.0 200 OK\r\n");
+    send(client, buf, strlen(buf), 0);
+    strcpy(buf, SERVER_STRING);
+    send(client, buf, strlen(buf), 0);
+    sprintf(buf, "Content-Type: text/html\r\n");
+    send(client, buf, strlen(buf), 0);
+    strcpy(buf, "\r\n");
+    send(client, buf, strlen(buf), 0);
 }
