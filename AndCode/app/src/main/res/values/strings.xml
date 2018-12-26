@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AndCode</string>
     <string name="entry_mvp">Enter MVP</string>
+    <string name="entry_arouter">Enter ARouter</string>
     <string name="click_mvp">Click me check MVP</string>
     <string name="title_activity_base">BaseActivity</string>
     <string name="checkout_is_wrong">Something is wrong</string>
