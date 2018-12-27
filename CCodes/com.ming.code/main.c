@@ -113,6 +113,7 @@ extern void dynamic_allocation_memory();
 extern void bubble_sort();
 
 extern void selection_sort();
+
 extern int getRequest();
 
 #define  message_for(a, b)  \
@@ -129,12 +130,65 @@ enum {
 };
 
 int token998 = 98;
+#define LOG_TAG    "main"
+
+#include <elog.h>
+#include <unistd.h>
+
+
+static void test_elog(void);
+
 
 int main() {
-    getRequest();
+    /* close printf buffer */
+    setbuf(stdout, NULL);
+    /* initialize EasyLogger */
+    elog_init();
+    /* set EasyLogger log format */
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+#ifdef ELOG_COLOR_ENABLE
+    elog_set_text_color_enabled(false);
+#endif
+    /* start EasyLogger */
+    elog_start();
+    test_elog();
+
     return 0;
 }
+
+/**
+ * EasyLogger demo
+ */
+/**
+ * EasyLogger demo
+ */
+void test_elog(void) {
+    uint8_t buf[256] = {0};
+    int i = 0;
+
+    for (i = 0; i < sizeof(buf); i++) {
+        buf[i] = i;
+    }
+    while (true) {
+        /* test log output for all level */
+        log_a("Hello EasyLogger!");
+        log_e("Hello EasyLogger!");
+        log_w("Hello EasyLogger!");
+        log_i("Hello EasyLogger!");
+        log_d("Hello EasyLogger!");
+        log_v("Hello EasyLogger!");
+//        elog_raw("Hello EasyLogger!");
+        elog_hexdump("test", 16, buf, sizeof(buf));
+        sleep(5);
+    }
+}
 /*test_print();
+getRequest();
 test_variable();//全局变量与局部变量
 printf("count is %d\n", count);//查看全局变量打印
 while (count--) {
