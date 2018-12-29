@@ -11,6 +11,9 @@ import ming.com.andcode.R;
 
 
 import ming.com.andcode.dagger2.component.DaggerDaggerActivityComp;
+import ming.com.andcode.dagger2.component.DaggerFlowerComponent;
+import ming.com.andcode.dagger2.component.DaggerPotComponent;
+import ming.com.andcode.dagger2.component.PotComponent;
 import ming.com.andcode.dagger2.delo.Flower;
 import ming.com.andcode.dagger2.delo.OkHttpClient;
 import ming.com.andcode.dagger2.delo.Pot;
@@ -25,31 +28,25 @@ public class DaggerActivity extends AppCompatActivity {
 
     @Inject
     Rose rose;
-
     @Inject
     Pot pot;
-
-
     @Inject
     OkHttpClient okHttpClient;
-
     @Inject
     RetrofitManager retrofitManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
         // 这个类是重新编译后Dagger2自动生成的，所以写这行代码之前要先编译一次 Build --> Rebuild Project
-        DaggerDaggerActivityComp.builder().daggeActivityModule(new DaggeActivityModule(3000)).flowerModule(new FlowerModule()).build().inject(this);
+        DaggerDaggerActivityComp.builder().potComponent(DaggerPotComponent.builder().flowerComponent(DaggerFlowerComponent.create()).build()).
+                daggeActivityModule(new DaggeActivityModule(3000)).build().inject(this);
         toastWhisper();
     }
 
     private void toastWhisper() {
-
         Log.d(TAG, " rose is :" + rose.whisper());
         Log.d(TAG, " pot is :" + pot.show());
-        //Log.d(TAG, " flower is :" + flower.toString());
         Log.d(TAG, " okHttpClient.toString() is :" + okHttpClient.toString());
         Log.d(TAG, " retrofitManager.getOkHttpClient().toString() is :" + retrofitManager.getOkHttpClient().toString());
     }

@@ -9,7 +9,7 @@ import ming.com.andcode.dagger2.module.FlowerModule;
 
 
 
-@Component(modules = {DaggeActivityModule.class,FlowerModule.class})
+@Component(modules = {DaggeActivityModule.class},dependencies = PotComponent.class)
 public interface DaggerActivityComp {
     void inject(DaggerActivity daggerActivity);
 }
