@@ -48,11 +48,6 @@ public class MVPActivity<T extends IPresenter> extends AppCompatActivity impleme
         super.onDestroy();
     }
 
-   /* @Override
-    public void showSuccessMsg(ArticleListBean bean) {
-        showMsg.setText(bean.data.datas.get(0).chapterName);
-    }*/
-
     @Override
     public void showSuccessMsg(Object bean) {
         if (bean != null) {

@@ -14,6 +14,7 @@ import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 
+import ming.com.andcode.dagger2.DaggerActivity;
 import ming.com.andcode.jni.JNIManage;
 import ming.com.andcode.mvp.MVPActivity;
 import ming.com.basemodule.Books;
@@ -21,7 +22,7 @@ import ming.com.basemodule.Books;
 @Route(path = "/app/MainActivity", group = "demo")
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "LoginInterceptor";
-    TextView tv_mvp, tv_arouter;
+    TextView tv_mvp, tv_arouter,tv_dagger;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.sample_text);
         tv_mvp = findViewById(R.id.tv_entry_mvp);
         tv_arouter = findViewById(R.id.tv_entry_arouter);
+        tv_dagger= findViewById(R.id.tv_entry_daggerr);
         tv.setText(JNIManage.getInstance().getNums());
         setOnClicks();
     }
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     .withInt("age", 25)
                     .withParcelable("book", new Books("ShuiXu", 396, 3012345, "HuNanPress"))
                     .navigation(MainActivity.this, 1314);
+        }));
+        tv_dagger.setOnClickListener((view -> {
+            Intent intent = new Intent(this, DaggerActivity.class);
+            startActivity(intent);
         }));
     }
 

@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Hello World!"
         android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/fab_margin"
         android:textSize="@dimen/main_text_size"
         android:layout_marginTop="@dimen/fab_margin"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,6 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/entry_mvp"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/fab_margin"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="@dimen/main_text_size"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -33,6 +37,8 @@
         android:id="@+id/tv_entry_arouter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/fab_margin"
         android:text="@string/entry_arouter"
         android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="@dimen/main_text_size"
@@ -40,5 +46,19 @@
         android:textSize="@dimen/main_text_size"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_entry_mvp" />
+
+    <TextView
+        android:id="@+id/tv_entry_daggerr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/entry_dagger"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/fab_margin"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="@dimen/main_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="@dimen/main_text_size"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_entry_arouter" />
 
 </android.support.constraint.ConstraintLayout>
