@@ -111,7 +111,11 @@ extern int changeable_varity(char *msg, ...);
 extern void dynamic_allocation_memory();
 
 extern void bubble_sort();
+
 extern void selection_sort();
+
+extern int getRequest();
+
 #define  message_for(a, b)  \
     printf(#a " and " #b ": We love you!\n")
 
@@ -126,67 +130,123 @@ enum {
 };
 
 int token998 = 98;
+#define LOG_TAG    "main"
+
+#include <elog.h>
+#include <unistd.h>
+
+
+static void test_elog(void);
+
 
 int main() {
-    /*test_print();
-    test_variable();//全局变量与局部变量
-    printf("count is %d\n", count);//查看全局变量打印
-    while (count--) {
-        sum_num();
-    }
+    /* close printf buffer */
+    setbuf(stdout, NULL);
+    /* initialize EasyLogger */
+    elog_init();
+    /* set EasyLogger log format */
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+#ifdef ELOG_COLOR_ENABLE
+    elog_set_text_color_enabled(false);
+#endif
+    /* start EasyLogger */
+    elog_start();
+    test_elog();
 
-    extern_method();
-    operator();
-    before_next();
-    relational_operator();
-    logical_operator();
-    bitwise_operation();
-    assignment_operation();
-    miscellaneous_operations();
-    precedence_of_operator();
-    goto_method();
-    int result = max_num(5, 37);
-    printf("result = max num is %d\n", result);
-    print_switch();
-    array_ges();
-    twodim_array();
-    test_get_average();
-    get_random_tesla();
-    pointer_array();
-    printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);*/
-    // test_function_pointer();
-    //test_assignment_array();
-    //string_test();
-    // book_init();
-    //book_set();
-    //test_bit_field();
-    //struct_array();
-    //union_size();
-    //get_union_mem();
-    //print_mem_size();
-    //print_float();
-    //print_all_you_put();
-    //input_notice();
-    //file_input();
-    //file_output();
-    //macros_predefined();
-    // message_for(ErGouZi, DaMao);
-    //tokenpaste(998);
-    // printf("Here is the message: %s\n", MESSAGE);
-    //hello();
-    //convert_data();
-    //error_deal();
-    /* double a = factorial(10);
-     int b = fabonaci(10);
-     printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
-     double c = average_nums(5, 1, 600, 5, 7, 9);
-     printf(" average_nums 5 is %f ", c);
-     changeable_varity("FAKER", "what", "are", "you", "nong", "sha", "lei", "/0");
-     dynamic_allocation_memory();*/
-    //bubble_sort();
-    selection_sort();
     return 0;
 }
+
+/**
+ * EasyLogger demo
+ */
+/**
+ * EasyLogger demo
+ */
+void test_elog(void) {
+    uint8_t buf[256] = {0};
+    int i = 0;
+
+    for (i = 0; i < sizeof(buf); i++) {
+        buf[i] = i;
+    }
+    while (true) {
+        /* test log output for all level */
+        log_a("Hello EasyLogger!");
+        log_e("Hello EasyLogger!");
+        log_w("Hello EasyLogger!");
+        log_i("Hello EasyLogger!");
+        log_d("Hello EasyLogger!");
+        log_v("Hello EasyLogger!");
+//        elog_raw("Hello EasyLogger!");
+        elog_hexdump("test", 16, buf, sizeof(buf));
+        sleep(5);
+    }
+}
+/*test_print();
+getRequest();
+test_variable();//全局变量与局部变量
+printf("count is %d\n", count);//查看全局变量打印
+while (count--) {
+    sum_num();
+}
+
+extern_method();
+operator();
+before_next();
+relational_operator();
+logical_operator();
+bitwise_operation();
+assignment_operation();
+miscellaneous_operations();
+precedence_of_operator();
+goto_method();
+int result = max_num(5, 37);
+printf("result = max num is %d\n", result);
+print_switch();
+array_ges();
+twodim_array();
+test_get_average();
+get_random_tesla();
+pointer_array();
+printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);*/
+// test_function_pointer();
+//test_assignment_array();
+//string_test();
+// book_init();
+//book_set();
+//test_bit_field();
+//struct_array();
+//union_size();
+//get_union_mem();
+//print_mem_size();
+//print_float();
+//print_all_you_put();
+//input_notice();
+//file_input();
+//file_output();
+//macros_predefined();
+// message_for(ErGouZi, DaMao);
+//tokenpaste(998);
+// printf("Here is the message: %s\n", MESSAGE);
+//hello();
+//convert_data();
+//error_deal();
+/* double a = factorial(10);
+ int b = fabonaci(10);
+ printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
+ double c = average_nums(5, 1, 600, 5, 7, 9);
+ printf(" average_nums 5 is %f ", c);
+ changeable_varity("FAKER", "what", "are", "you", "nong", "sha", "lei", "/0");
+ dynamic_allocation_memory();*/
+//bubble_sort();
+//selection_sort();
+//return 0;
+
 
 void sum_num(void) {
     static int another_count = 5;

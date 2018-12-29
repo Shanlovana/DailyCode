@@ -1,3 +1,4 @@
+/*
 //
 // Created by shanlovana on 18-12-20.
 //
@@ -32,7 +33,9 @@ int main() {
             error_die("accept");
         }
         // 派生线程用accept_request函数处理新请求。
-        /* accept_request(client_sock); */
+        */
+/* accept_request(client_sock); *//*
+
         if (pthread_create(&new_thread, NULL, (void *) accept_request, (void *) &client_sock) != 0) {
             perror("pthrea_create");
         }
@@ -42,4 +45,4 @@ int main() {
 
     return 0;
 
-}
+}*/

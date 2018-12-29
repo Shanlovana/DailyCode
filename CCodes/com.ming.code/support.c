@@ -73,7 +73,7 @@ void test_print(void) {
     int num = -9527;
     puts("please input a num");
     scanf("%d", &num);
-    printf("the num you input is ", num);
+    printf("the num you input is %d", num);
     int e, f, g;
     puts("please input three nums ");
     scanf("%d%d%d", &e, &f, &g);
@@ -227,7 +227,7 @@ void assignment_operation(void) {
 
     c = 200;
     c %= a;
-    printf("Line 6 - %= 运算符实例，c 的值 = %d\n", c);
+    printf("Line 6 - /= 运算符实例，c 的值 = %d\n", c);
 
     c <<= 2;
     printf("Line 7 - <<= 运算符实例，c 的值 = %d\n", c);
@@ -517,7 +517,7 @@ union Data {
 
 void union_size() {
     union Data data;
-    printf("Memory size occupied by data : %d\n", sizeof(data));
+    printf("Memory size occupied by data : %ld\n", sizeof(data));
 }
 
 void get_union_mem() {
@@ -553,11 +553,11 @@ struct {
 } statusell;
 
 void print_mem_size() {
-    printf("Memory size occupied by status : %d\n", sizeof(status));
-    printf("Memory size occupied by statuse : %d\n", sizeof(statuse));
-    printf("Memory size occupied by statuse : %d\n", sizeof(statusel));
-    printf("Memory size occupied by statuse : %d\n", sizeof(statusell));
-    printf("Memory size occupied by long : %d\n", sizeof(long));
+    printf("Memory size occupied by status : %ld\n", sizeof(status));
+    printf("Memory size occupied by statuse : %ld\n", sizeof(statuse));
+    printf("Memory size occupied by statuse : %ld\n", sizeof(statusel));
+    printf("Memory size occupied by statuse : %ld\n", sizeof(statusell));
+    printf("Memory size occupied by long : %ld\n", sizeof(long));
 
 }
 
@@ -573,7 +573,7 @@ void print_all_you_put() {
     char str[100];
 
     printf("Enter a value :");
-    gets(str);
+    fgets(str,200,stdin);
 
     printf("\nYou entered: ");
     puts(str);

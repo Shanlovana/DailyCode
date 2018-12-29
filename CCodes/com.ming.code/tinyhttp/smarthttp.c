@@ -1,3 +1,4 @@
+/*
 //
 // Created by shanlovana on 18-12-20.
 //
@@ -18,10 +19,12 @@
 
 #define SERVER_STRING "Server: jdbhttpd/0.1.0\r\n"//定义server名称
 
+*/
 /**函数说明：检查参数c是否为空格字符，
 *也就是判断是否为空格(' ')、定位字符(' \t ')、CR(' \r ')、换行(' \n ')、垂直定位字符(' \v ')或翻页(' \f ')的情况。
 *返回值：若参数c 为空白字符，则返回非 0，否则返回 0。
-*/
+*//*
+
 
 #define ISspace(x) isspace((int)(x))
 
@@ -49,11 +52,17 @@ int startup(u_short *);//开启http服务，包括绑定端口，监听，开启
 
 void unimplemented(int);//返回给浏览器表明受收到的http请求所用method不支持
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* A request has caused a call to accept() on the server port to
  * return.  Process the request appropriately.
- * Parameters: the socket connected to the client */
-/**********************************************************************/
+ * Parameters: the socket connected to the client *//*
+
+*/
+/**********************************************************************//*
+
 //接收客户端的连接，并读取请求数据
 
 void *accept_request(void *fron_client) {
@@ -129,7 +138,9 @@ void *accept_request(void *fron_client) {
     //返回值:     执行成功则返回0，失败返回-1，错误代码存于errno（需要include <errno.h>）
     if (stat(path, &st) == -1) {
         //假如访问的网页不存在，则不断的读取剩下的请求头信息，并丢弃即可
-        while ((numchars > 0) && strcmp('\n', buf)) {/* read & discard headers */
+        while ((numchars > 0) && strcmp('\n', buf)) {*/
+/* read & discard headers *//*
+
             numchars = get_line(client, buf, sizeof(buf));
             //最后声明网页不存在
             not_found(client);
@@ -158,12 +169,18 @@ void *accept_request(void *fron_client) {
 }
 
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Execute a CGI script.  Will need to set environment variables as
  * appropriate.
  * Parameters: client socket descriptor
- *             path to the CGI script */
-/**********************************************************************/
+ *             path to the CGI script *//*
+
+*/
+/**********************************************************************//*
+
 //执行cgi动态解析
 void execute_cgi(int client, const char *path, const char *method, const char *query_string) {
     char buf[1024];
@@ -230,7 +247,9 @@ void execute_cgi(int client, const char *path, const char *method, const char *q
     sprintf(buf, "HTTP/1.0 200 OK\r\n");
     send(client, buf, strlen(buf), 0);
     // child process use CGI
-    if (pid == 0) { /* 子进程: 运行CGI 脚本 */
+    if (pid == 0) { */
+/* 子进程: 运行CGI 脚本 *//*
+
         // 环境变量缓冲区，会存在溢出风险
         char meth_env[255];
         char query_env[255];
@@ -266,7 +285,9 @@ void execute_cgi(int client, const char *path, const char *method, const char *q
         execl(path, path, NULL);//执行CGI脚本
         exit(0);
 
-    } else {/* 父进程 */
+    } else {*/
+/* 父进程 *//*
+
         close(cgi_output[1]);//关闭了cgi_output中的写通道，注意这是父进程中cgi_output变量和子进程要区分开
         close(cgi_input[0]);//关闭了cgi_input中的读通道
         if (strcasecmp(method, "POST") == 0) {
@@ -305,7 +326,10 @@ void execute_cgi(int client, const char *path, const char *method, const char *q
 
 
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Get a line from a socket, whether the line ends in a newline,
  * carriage return, or a CRLF combination.  Terminates the string read
  * with a null character.  If no newline indicator is found before the
@@ -316,8 +340,11 @@ void execute_cgi(int client, const char *path, const char *method, const char *q
  * Parameters: the socket descriptor
  *             the buffer to save the data in
  *             the size of the buffer
- * Returns: the number of bytes stored (excluding null) */
-/**********************************************************************/
+ * Returns: the number of bytes stored (excluding null) *//*
+
+*/
+/**********************************************************************//*
+
 //解析一行http报文
 
 int get_line(int sock, char *buf, int size) {
@@ -344,14 +371,20 @@ int get_line(int sock, char *buf, int size) {
 }
 
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* This function starts the process of listening for web connections
  * on a specified port.  If the port is 0, then dynamically allocate a
  * port and modify the original port variable to reflect the actual
  * port.
  * Parameters: pointer to variable containing the port to connect on
- * Returns: the socket */
-/**********************************************************************/
+ * Returns: the socket *//*
+
+*/
+/**********************************************************************//*
+
 
 //startup启动服务端,建立连接
 // startup函数：按照TCP连接的正常流程依次调用socket，bind，listen函数。
@@ -392,11 +425,17 @@ int startup(u_short *port) {
     return (httpd);
 }
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Inform the client that the requested web method has not been
  * implemented.
- * Parameter: the client socket */
-/**********************************************************************/
+ * Parameter: the client socket *//*
+
+*/
+/**********************************************************************//*
+
 
 void unimplemented(int client) {
     char buf[1024];
@@ -419,9 +458,15 @@ void unimplemented(int client) {
     send(client, buf, strlen(buf), 0);
 
 }
-/**********************************************************************/
-/* Give a client a 404 not found status message. */
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
+/* Give a client a 404 not found status message. *//*
+
+*/
+/**********************************************************************//*
+
 void not_found(int client) {
     char buf[1024];
     //返回404
@@ -445,21 +490,33 @@ void not_found(int client) {
     send(client, buf, strlen(buf), 0);
 }
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Print out an error message with perror() (for system errors; based
  * on value of errno, which indicates system call errors) and exit the
- * program indicating an error. */
-/**********************************************************************/
+ * program indicating an error. *//*
+
+*/
+/**********************************************************************//*
+
 void error_die(const char *sc) {
     perror(sc);
     exit(1);
 }
 
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Inform the client that a request it has made has a problem.
- * Parameters: client socket */
-/**********************************************************************/
+ * Parameters: client socket *//*
+
+*/
+/**********************************************************************//*
+
 void bad_request(int client) {
     char buf[1024];
     //发送400
@@ -475,10 +532,16 @@ void bad_request(int client) {
     send(client, buf, sizeof(buf), 0);
 }
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Inform the client that a CGI script could not be executed.
- * Parameter: the client socket descriptor. */
-/**********************************************************************/
+ * Parameter: the client socket descriptor. *//*
+
+*/
+/**********************************************************************//*
+
 void cannot_execute(int client) {
     char buf[1024];
     //发送500
@@ -495,13 +558,19 @@ void cannot_execute(int client) {
 
 
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Send a regular file to the client.  Use headers, and report
  * errors to client if they occur.
  * Parameters: a pointer to a file structure produced from the socket
  *              file descriptor
- *             the name of the file to serve */
-/**********************************************************************/
+ *             the name of the file to serve *//*
+
+*/
+/**********************************************************************//*
+
 //将请求的文件发送回浏览器客户端
 void server_file(int client, const char *filename) {
     FILE *resource = NULL;
@@ -526,13 +595,19 @@ void server_file(int client, const char *filename) {
 
 }
 
-/**********************************************************************/
+*/
+/**********************************************************************//*
+
+*/
 /* Put the entire contents of a file out on a socket.  This function
  * is named after the UNIX "cat" command, because it might have been
  * easier just to do something like pipe, fork, and exec("cat").
  * Parameters: the client socket descriptor
- *             FILE pointer for the file to cat */
-/**********************************************************************/
+ *             FILE pointer for the file to cat *//*
+
+*/
+/**********************************************************************//*
+
 
 void cat(int client, FILE *resource) {
     //发送文件的内容
@@ -546,15 +621,25 @@ void cat(int client, FILE *resource) {
     }
 }
 
-/**********************************************************************/
-/* Return the informational HTTP headers about a file. */
+*/
+/**********************************************************************//*
+
+*/
+/* Return the informational HTTP headers about a file. *//*
+
+*/
 /* Parameters: the socket to print the headers on
- *             the name of the file */
-/**********************************************************************/
+ *             the name of the file *//*
+
+*/
+/**********************************************************************//*
+
 void headers(int client, const char *filename)
 {
     char buf[1024];
-    (void)filename;  /* could use filename to determine file type */
+    (void)filename;  */
+/* could use filename to determine file type *//*
+
 //发送HTTP头
     strcpy(buf, "HTTP/1.0 200 OK\r\n");
     send(client, buf, strlen(buf), 0);
@@ -564,4 +649,4 @@ void headers(int client, const char *filename)
     send(client, buf, strlen(buf), 0);
     strcpy(buf, "\r\n");
     send(client, buf, strlen(buf), 0);
-}
+}*/
