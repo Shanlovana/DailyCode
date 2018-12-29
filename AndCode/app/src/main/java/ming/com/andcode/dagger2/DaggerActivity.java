@@ -24,13 +24,11 @@ public class DaggerActivity extends AppCompatActivity {
     private static final String TAG = "DaggerActivity";
 
     @Inject
-    Pot pot;
-
-    @Inject
     Rose rose;
 
     @Inject
-    Flower flower;
+    Pot pot;
+
 
     @Inject
     OkHttpClient okHttpClient;
@@ -48,9 +46,10 @@ public class DaggerActivity extends AppCompatActivity {
     }
 
     private void toastWhisper() {
-        Log.d(TAG, " pot.show() is :" + pot.show());
+
         Log.d(TAG, " rose is :" + rose.whisper());
-        Log.d(TAG, " flower is :" + flower.toString());
+        Log.d(TAG, " pot is :" + pot.show());
+        //Log.d(TAG, " flower is :" + flower.toString());
         Log.d(TAG, " okHttpClient.toString() is :" + okHttpClient.toString());
         Log.d(TAG, " retrofitManager.getOkHttpClient().toString() is :" + retrofitManager.getOkHttpClient().toString());
     }
