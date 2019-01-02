@@ -140,6 +140,7 @@ static void test_elog(void);
 
 
 int main() {
+    getRequest();
     /* close printf buffer */
     setbuf(stdout, NULL);
     /* initialize EasyLogger */
@@ -152,7 +153,7 @@ int main() {
     elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
     elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
 #ifdef ELOG_COLOR_ENABLE
-    elog_set_text_color_enabled(false);
+    elog_set_text_color_enabled(true);
 #endif
     /* start EasyLogger */
     elog_start();
