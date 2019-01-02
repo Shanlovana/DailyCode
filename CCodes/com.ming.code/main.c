@@ -139,6 +139,11 @@ int token998 = 98;
 static void test_elog(void);
 
 
+
+#define LOG_TAG    "main"
+
+
+
 int main() {
     getRequest();
     /* close printf buffer */
