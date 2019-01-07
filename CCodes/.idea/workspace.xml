@@ -11,15 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="1,提交局域网post带参请求，并使用cJSON处理简单json数据">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.ming.code/libcurl/cluster_curl.c" beforeDir="false" afterPath="$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.ming.code/libcurl/cluster_curl.h" beforeDir="false" afterPath="$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.ming.code/libcurl/libcurlclient.c" beforeDir="false" afterPath="$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.ming.code/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/com.ming.code/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.ming.code/tinyhttp/smarthttp.c" beforeDir="false" afterPath="$PROJECT_DIR$/com.ming.code/tinyhttp/smarthttp.c" afterDir="false" />
-    </list>
+    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +25,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ming.code/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
+            <state relative-caret-position="2567">
               <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -46,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-568">
+            <state relative-caret-position="1190">
               <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
             </state>
           </provider>
@@ -55,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="435">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -67,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2022">
+            <state relative-caret-position="7752">
               <caret line="456" column="37" selection-start-line="456" selection-start-column="37" selection-end-line="456" selection-end-column="37" />
               <folding>
                 <element signature="e#135#154#0" expanded="true" />
@@ -79,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="48" lean-forward="true" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+            <state relative-caret-position="527">
+              <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -129,7 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,6 +161,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,6 +219,7 @@
       <workItem from="1546561165120" duration="20149000" />
       <workItem from="1546818755745" duration="2531000" />
       <workItem from="1546837922413" duration="5437000" />
+      <workItem from="1546843397060" duration="369000" />
     </task>
     <task id="LOCAL-00001" summary="1,添加打印输出颜色设置">
       <created>1546399816511</created>
@@ -235,11 +228,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546399816511</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1,提交局域网post带参请求，并使用cJSON处理简单json数据">
+      <created>1546843491734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1546843491734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76666000" />
+    <option name="totallyTimeSpent" value="77035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,7 +253,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1008" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.23076923" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.23344018" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.20864947" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -266,7 +266,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50106835" side_tool="true" weight="0.4259681" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32915717" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.38838267" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32915717" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.36104783" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -278,9 +278,79 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="3">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -303,6 +373,13 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+        <option value="2" />
+        <option value="3" />
+      </set>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -319,6 +396,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="1,添加打印输出颜色设置" />
     <MESSAGE value="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
     <option name="LAST_COMMIT_MESSAGE" value="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
@@ -380,33 +458,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="48" lean-forward="true" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-568">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2022">
-          <caret line="456" column="37" selection-start-line="456" selection-start-column="37" selection-end-line="456" selection-end-column="37" />
-          <folding>
-            <element signature="e#135#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com.ming.code/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
+        <state relative-caret-position="2567">
           <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -415,10 +469,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7752">
+          <caret line="456" column="37" selection-start-line="456" selection-start-column="37" selection-end-line="456" selection-end-column="37" />
+          <folding>
+            <element signature="e#135#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="435">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="e#41#59#0" expanded="true" />
           </folding>
