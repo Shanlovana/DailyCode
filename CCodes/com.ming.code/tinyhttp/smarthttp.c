@@ -56,7 +56,7 @@ void unimplemented(int);//返回给浏览器表明受收到的http请求所用me
 /**********************************************************************//*
 
 */
-/* A request has caused a call to accept() on the server port to
+/* A request has caused a call to accept() on the request port to
  * return.  Process the request appropriately.
  * Parameters: the socket connected to the client *//*
 
@@ -480,7 +480,7 @@ void not_found(int client) {
     send(client, buf, strlen(buf), 0);
     sprintf(buf, "<HTML><TITLE>Not Found</TITLE>\r\n");
     send(client, buf, strlen(buf), 0);
-    sprintf(buf, "<BODY><P>The server could not fulfill\r\n");
+    sprintf(buf, "<BODY><P>The request could not fulfill\r\n");
     send(client, buf, strlen(buf), 0);
     sprintf(buf, "your request because the resource specified\r\n");
     send(client, buf, strlen(buf), 0);

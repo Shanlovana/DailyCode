@@ -139,9 +139,7 @@ int token998 = 98;
 static void test_elog(void);
 
 
-
 #define LOG_TAG    "main"
-
 
 
 int main() {
@@ -149,6 +147,17 @@ int main() {
     /* close printf buffer */
     setbuf(stdout, NULL);
     /* initialize EasyLogger */
+
+    return 0;
+}
+
+/**
+ * EasyLogger demo
+ */
+/**
+ * EasyLogger demo
+ */
+void test_elog(void) {
     elog_init();
     /* set EasyLogger log format */
     elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
@@ -162,18 +171,6 @@ int main() {
 #endif
     /* start EasyLogger */
     elog_start();
-    test_elog();
-
-    return 0;
-}
-
-/**
- * EasyLogger demo
- */
-/**
- * EasyLogger demo
- */
-void test_elog(void) {
     uint8_t buf[256] = {0};
     int i = 0;
 
@@ -193,6 +190,7 @@ void test_elog(void) {
         sleep(5);
     }
 }
+
 /*test_print();
 getRequest();
 test_variable();//全局变量与局部变量
@@ -201,57 +199,21 @@ while (count--) {
     sum_num();
 }
 
-extern_method();
-operator();
-before_next();
-relational_operator();
-logical_operator();
-bitwise_operation();
-assignment_operation();
-miscellaneous_operations();
-precedence_of_operator();
-goto_method();
-int result = max_num(5, 37);
-printf("result = max num is %d\n", result);
-print_switch();
-array_ges();
-twodim_array();
-test_get_average();
-get_random_tesla();
-pointer_array();
-printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);*/
-// test_function_pointer();
-//test_assignment_array();
-//string_test();
-// book_init();
-//book_set();
-//test_bit_field();
-//struct_array();
-//union_size();
-//get_union_mem();
-//print_mem_size();
-//print_float();
-//print_all_you_put();
-//input_notice();
-//file_input();
-//file_output();
-//macros_predefined();
-// message_for(ErGouZi, DaMao);
-//tokenpaste(998);
-// printf("Here is the message: %s\n", MESSAGE);
-//hello();
-//convert_data();
-//error_deal();
-/* double a = factorial(10);
+extern_method();operator();before_next();relational_operator();logical_operator();bitwise_operation();
+assignment_operation();miscellaneous_operations();precedence_of_operator();goto_method();int result = max_num(5, 37);
+printf("result = max num is %d\n", result);print_switch();array_ges();twodim_array();test_get_average();get_random_tesla();
+pointer_array();printf("enum Q W E R is : %d , %d , %d , %d", Q, W, E, R);test_function_pointer();test_assignment_array();
+string_test();book_init();book_set();test_bit_field();struct_array();union_size();get_union_mem();print_mem_size();
+print_float();print_all_you_put();input_notice();file_input();file_output();macros_predefined();message_for(ErGouZi, DaMao);
+tokenpaste(998); printf("Here is the message: %s\n", MESSAGE);hello();convert_data();error_deal();
+double a = factorial(10);
  int b = fabonaci(10);
  printf(" factorial 10 is %f , fabonaci 10 is %d \n", a, b);
  double c = average_nums(5, 1, 600, 5, 7, 9);
  printf(" average_nums 5 is %f ", c);
  changeable_varity("FAKER", "what", "are", "you", "nong", "sha", "lei", "/0");
- dynamic_allocation_memory();*/
-//bubble_sort();
-//selection_sort();
-//return 0;
+ dynamic_allocation_memory();
+bubble_sort();selection_sort();return 0;*/
 
 
 void sum_num(void) {
@@ -319,4 +281,3 @@ void test_assignment_array() {
     }
     printf("\n");
 }
-
