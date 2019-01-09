@@ -15,6 +15,7 @@ void test_post_method();
 void test_get_method();
 
 
+
 int getRequest() {
     int nCode = -1;
 
@@ -23,7 +24,6 @@ int getRequest() {
 
     test_post_method();
     //test_get_method();
-
     //全局资源清除，放在主线程中
     nCode = curl_global_cleanup_resource();
     return 0;
@@ -52,7 +52,7 @@ void test_get_method() {
 
 
     //使用GET方式发送数据method = 0,数据格式为默认format = 0,msg发送数据为空,curl_rec为返回数据
-    char *msg = "{\"user\":\"user\",\"pwd\":\"pwd\"}";;
+    char *msg = "{\"user\":\"user\",\"pwd\":\"pwd\"}";
     int method = METHOD_GET;
     CURL *curl = NULL;
     curl = curl_init_resource();
@@ -87,8 +87,8 @@ void test_post_method() {
     //存放要发送的数据，下列为json数据
     cJSON *root = cJSON_CreateObject();
 
-    cJSON_AddStringToObject(root, "user", "yasuoerzi");
-    cJSON_AddStringToObject(root, "pwd", "123123");
+    cJSON_AddStringToObject(root, "user", "为所欲为");
+    cJSON_AddStringToObject(root, "pwd", "hkcw3cjbc");
     post_str = cJSON_Print(root);
     cJSON_Delete(root);
     root = NULL;

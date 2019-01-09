@@ -510,7 +510,6 @@ static int post_msg(CURL* curl,
 
 }
 
-
 /*
     * 通过get的方式操作
     * 参数1: curl结构体
