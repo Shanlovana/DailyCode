@@ -8,8 +8,13 @@
 #include <string.h>
 #include <errno.h>
 #include <stdarg.h>
+#include <elog.h>
+#include <unistd.h>
+#include "method.h"
 
 extern int errno;
+#define LOG_TAG    "main"
+static int count = 10;
 
 void error_deal() {
     FILE *pf;
@@ -189,4 +194,109 @@ void insertion_sort() {
     for (int k = 0; k < len; ++k) {
         printf("insertion_sort index %d is %d \n", k, arr[k]);
     }
+}
+/**
+ * EasyLogger demo
+ */
+/**
+ * EasyLogger demo
+ */
+void test_elog(void) {
+    elog_init();
+    /* set EasyLogger log format */
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
+#ifdef ELOG_COLOR_ENABLE
+    elog_set_text_color_enabled(true);
+#endif
+    /* start EasyLogger */
+    elog_start();
+    uint8_t buf[256] = {0};
+    int i = 0;
+
+    for (i = 0; i < sizeof(buf); i++) {
+        buf[i] = i;
+    }
+    while (true) {
+        /* test log output for all level */
+        log_a("Hello EasyLogger!");
+        log_e("Hello EasyLogger!");
+        log_w("Hello EasyLogger!");
+        log_i("Hello EasyLogger!");
+        log_d("Hello EasyLogger!");
+        log_v("Hello EasyLogger!");
+//        elog_raw("Hello EasyLogger!");
+        elog_hexdump("test", 16, buf, sizeof(buf));
+        sleep(5);
+    }
+}
+
+void sum_num(void) {
+    static int another_count = 5;
+    another_count++;
+    printf(" another_count is %d , count is %d\n", another_count, count);
+
+}
+
+void print_switch() {
+    int a = 100, b = 200;
+    printf("before,a is : %d b is : %d\n", a, b);
+    /* 调用函数来交换值 */
+    switch_num(a, b);
+    printf("after,a is : %d b is : %d\n", a, b);
+}
+
+void test_variable() {
+    printf(" count is %d\n", count);
+    int count = 55;
+    printf(" count is %d\n", count);
+}
+
+void test_get_average() {
+    /* 带有 5 个元素的整型数组 */
+    int balance[5] = {1000, 2, 3, 17, 50};
+    double avg;
+
+    /* 传递一个指向数组的指针作为参数 */
+    avg = get_average(balance, 5);
+
+    /* 输出返回值 */
+    printf("average is:   %f ", avg);
+}
+
+void get_random_tesla() {
+    /* 一个指向整数的指针 */
+    int *p;
+    int i;
+
+    p = getRandom();
+    for (i = 0; i < 10; i++) {
+        printf("*(p + %d) : %d\n", i, *(p + i));
+    }
+
+}
+
+void test_function_pointer() {
+    /* p 是函数指针 */
+    int (*p)(int, int) = &max_num; // &可以省略
+    int a, b, c, d;
+    printf("please input three nums:");
+    scanf("%d %d %d", &a, &b, &c);
+    /* 与直接调用函数等价，d = max(max(a, b), c) */
+    d = p(p(a, b), c);
+
+    printf("max num is : %d\n", d);
+}
+
+void test_assignment_array() {
+    int myarray[10];
+    assignment_array(myarray, 10, get_random_value);
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", myarray[i]);
+    }
+    printf("\n");
 }

@@ -1,118 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>
-//#include "operatorhead.h"
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
-#include "operatorhead.h"
+#include "blogcode/operatorhead.h"
+#include "blogcode/method.h"
 
 #endif
 
-static int count = 10;
 int conbas;
-
-extern void writen_extern();
-
-extern void goto_method();
-
-extern void sum_num();
-
-extern void operator();
-
-extern void extern_method();
-
-extern void test_print();
-
-extern void before_next();
-
-extern void relational_operator();
-
-extern void logical_operator();
-
-extern void bitwise_operation();
-
-extern void assignment_operation();
-
-extern void miscellaneous_operations();
-
-extern void precedence_of_operator();
-
-extern int max_num(int, int);
-
-void switch_num(int, int);
-
-void print_switch();
-
-void test_variable();
-
-extern void array_ges();
-
-extern void twodim_array();
-
-extern double get_average(int arr[], int size);
-
-extern int *getRandom();
-
-void get_random_tesla();
-
-extern void pointer_array();
-
-void test_get_average();
-
-void test_function_pointer();
-
 extern void assignment_array(int *array, size_t arraySize, int (*getrandom_value)(void));
 
-extern int get_random_value();
-
-void test_assignment_array();
-
-extern void string_test();
-
-extern void book_init();
-
-extern void book_set();
-
-extern void test_bit_field();
-
-void union_size();
-
-void get_union_mem();
-
-extern void print_mem_size();
-
-extern void print_float();
-
-extern void struct_array();
-
-extern void print_all_you_put();
-
-extern void input_notice();
-
-extern void file_input();
-
-extern void file_output();
-
-extern void macros_predefined();
-
-extern void convert_data();
-
-extern void error_deal();
-
-extern double factorial(unsigned int);
-
-extern int fabonaci(int);
-
-extern double average_nums(int num, ...);
-
-extern int changeable_varity(char *msg, ...);
-
-extern void dynamic_allocation_memory();
-
-extern void bubble_sort();
-
-extern void selection_sort();
 
 extern int getRequest();
 
@@ -151,45 +50,6 @@ int main() {
     return 0;
 }
 
-/**
- * EasyLogger demo
- */
-/**
- * EasyLogger demo
- */
-void test_elog(void) {
-    elog_init();
-    /* set EasyLogger log format */
-    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
-    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
-    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
-    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
-    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~ELOG_FMT_FUNC);
-#ifdef ELOG_COLOR_ENABLE
-    elog_set_text_color_enabled(true);
-#endif
-    /* start EasyLogger */
-    elog_start();
-    uint8_t buf[256] = {0};
-    int i = 0;
-
-    for (i = 0; i < sizeof(buf); i++) {
-        buf[i] = i;
-    }
-    while (true) {
-        /* test log output for all level */
-        log_a("Hello EasyLogger!");
-        log_e("Hello EasyLogger!");
-        log_w("Hello EasyLogger!");
-        log_i("Hello EasyLogger!");
-        log_d("Hello EasyLogger!");
-        log_v("Hello EasyLogger!");
-//        elog_raw("Hello EasyLogger!");
-        elog_hexdump("test", 16, buf, sizeof(buf));
-        sleep(5);
-    }
-}
 
 /*test_print();
 getRequest();
@@ -215,69 +75,3 @@ double a = factorial(10);
  dynamic_allocation_memory();
 bubble_sort();selection_sort();return 0;*/
 
-
-void sum_num(void) {
-    static int another_count = 5;
-    another_count++;
-    printf(" another_count is %d , count is %d\n", another_count, count);
-
-}
-
-void print_switch() {
-    int a = 100, b = 200;
-    printf("before,a is : %d b is : %d\n", a, b);
-    /* 调用函数来交换值 */
-    switch_num(a, b);
-    printf("after,a is : %d b is : %d\n", a, b);
-}
-
-void test_variable() {
-    printf(" count is %d\n", count);
-    int count = 55;
-    printf(" count is %d\n", count);
-}
-
-void test_get_average() {
-    /* 带有 5 个元素的整型数组 */
-    int balance[5] = {1000, 2, 3, 17, 50};
-    double avg;
-
-    /* 传递一个指向数组的指针作为参数 */
-    avg = get_average(balance, 5);
-
-    /* 输出返回值 */
-    printf("average is:   %f ", avg);
-}
-
-void get_random_tesla() {
-    /* 一个指向整数的指针 */
-    int *p;
-    int i;
-
-    p = getRandom();
-    for (i = 0; i < 10; i++) {
-        printf("*(p + %d) : %d\n", i, *(p + i));
-    }
-
-}
-
-void test_function_pointer() {
-    /* p 是函数指针 */
-    int (*p)(int, int) = &max_num; // &可以省略
-    int a, b, c, d;
-    printf("please input three nums:");
-    scanf("%d %d %d", &a, &b, &c);
-    /* 与直接调用函数等价，d = max(max(a, b), c) */
-    d = p(p(a, b), c);
-
-    printf("max num is : %d\n", d);
-}
-
-void test_assignment_array() {
-    int myarray[10];
-    assignment_array(myarray, 10, get_random_value);
-    for (int i = 0; i < 10; i++) {
-        printf("%d ", myarray[i]);
-    }
-    printf("\n");
-}
