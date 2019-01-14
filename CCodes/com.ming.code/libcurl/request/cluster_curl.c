@@ -783,7 +783,7 @@ int download_file(CURL* curl, st_curl_params* curl_params, const char* filename)
     }
 
     //设定传输方式
-    curl_easy_setopt(curl, CURLOPT_HTTPGET, 1);
+   // curl_easy_setopt(curl, CURLOPT_HTTPGET, 1);
 
     //设置消息头
     struct curl_slist *headers = NULL;
