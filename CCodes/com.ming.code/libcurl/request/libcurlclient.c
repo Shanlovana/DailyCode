@@ -7,6 +7,9 @@
 #include "cluster_curl.h"
 #include <cjson/cJSON.h>
 
+extern int socket_request();
+extern int recieve_send();
+
 #define DPRINT printf
 #define EPRINT printf
 
@@ -26,7 +29,9 @@ int getRequest() {
 
     //全局资源初始化，放在主线程
     nCode = curl_global_init_resource();
-    down_file_method();
+    recieve_send();
+    //socket_request();
+    //down_file_method();
     //test_post_method();
     //test_get_method();
     //全局资源清除，放在主线程中
@@ -109,7 +114,7 @@ void test_post_method() {
 void down_file_method() {
     static const char *pagefilename = "/home/shanlovana/HWIDGen_CN.exe";
     FILE *pagefile;
-    curl_global_init(CURL_GLOBAL_ALL);
+    //curl_global_init(CURL_GLOBAL_ALL);
     CURL *curl_handle = NULL;
     char *DOWNLOADURL = "http://plb5lb7wm.bkt.clouddn.com/HWIDGen_CN.exe";
 
@@ -145,6 +150,6 @@ void down_file_method() {
     /* cleanup curl stuff */
     curl_easy_cleanup(curl_handle);
 
-    curl_global_cleanup();
+    //  curl_global_cleanup();
 
 }
