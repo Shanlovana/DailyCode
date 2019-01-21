@@ -7,7 +7,7 @@
 
 
 int hello(int num) {
-    printf("Hello World From MathUtils!\n");
+    printf("Hello World From MathUtils! Result is %d\n",num * 2);
     return num * 2;
 }
 

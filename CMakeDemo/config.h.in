@@ -1,2 +1,5 @@
 #cmakedefine USE_MATH_LIB
-/*#cmakedefine USE_MATH_LIB*/
+#cmakedefine HAVE_POW
+// the configured options and settings for Tutorial
+#define VERSIONCODEMAJOR @VERSIONCODEMAJOR@
+#define VERSIONCODEMINOR @VERSIONCODEMINOR@

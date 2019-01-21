@@ -11,7 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
+    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="1,提交局域网post带参请求，并使用cJSON处理简单json数据">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,47 +24,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ming.code/main.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2567">
-              <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#2116#2133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c">
+        <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/socket/sendrecv.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+            <state relative-caret-position="537">
+              <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
               <folding>
-                <element signature="e#41#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7752">
-              <caret line="456" column="37" selection-start-line="456" selection-start-column="37" selection-end-line="456" selection-end-column="37" />
-              <folding>
-                <element signature="e#135#154#0" expanded="true" />
+                <element signature="e#44#62#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
-              <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -83,6 +51,10 @@
     <findStrings>
       <find>FIELDS</find>
       <find>GET</find>
+      <find>do</find>
+      <find>PORTNUM</find>
+      <find>socket_request</find>
+      <find>Sending</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,9 +67,12 @@
         <option value="$PROJECT_DIR$/com.ming.code/tinyhttp/smarthttp.c" />
         <option value="$PROJECT_DIR$/com.ming.code/main.c" />
         <option value="$PROJECT_DIR$/com.ming.code/libcurl/libcurlclient.c" />
-        <option value="$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c" />
+        <option value="$PROJECT_DIR$/com.ming.code/libcurl/socket/externalsocket.c" />
+        <option value="$PROJECT_DIR$/com.ming.code/libcurl/socket/sendrecv.cpp" />
         <option value="$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c" />
+        <option value="$PROJECT_DIR$/com.ming.code/libcurl/socket/sendrecv.c" />
       </list>
     </option>
   </component>
@@ -131,12 +106,13 @@
             <path>
               <item name="CCodes" type="b2602c69:ProjectViewProjectNode" />
               <item name="CCodes" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="com.ming.code" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCodes" type="b2602c69:ProjectViewProjectNode" />
               <item name="CCodes" type="462c0819:PsiDirectoryNode" />
               <item name="com.ming.code" type="462c0819:PsiDirectoryNode" />
+              <item name="blogcode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCodes" type="b2602c69:ProjectViewProjectNode" />
@@ -150,6 +126,13 @@
               <item name="com.ming.code" type="462c0819:PsiDirectoryNode" />
               <item name="libcurl" type="462c0819:PsiDirectoryNode" />
               <item name="request" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCodes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCodes" type="462c0819:PsiDirectoryNode" />
+              <item name="com.ming.code" type="462c0819:PsiDirectoryNode" />
+              <item name="libcurl" type="462c0819:PsiDirectoryNode" />
+              <item name="socket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCodes" type="b2602c69:ProjectViewProjectNode" />
@@ -171,6 +154,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/com.ming.code/libcurl/socket" />
       <recent name="$PROJECT_DIR$/com.ming.code/libcurl/request" />
       <recent name="E:\EclipseWorkspace\DailyCode\CCodes\com.ming.code" />
     </key>
@@ -220,6 +204,11 @@
       <workItem from="1546818755745" duration="2531000" />
       <workItem from="1546837922413" duration="5437000" />
       <workItem from="1546843397060" duration="369000" />
+      <workItem from="1547451187059" duration="3287000" />
+      <workItem from="1547596281111" duration="9818000" />
+      <workItem from="1547683822315" duration="21422000" />
+      <workItem from="1547786848371" duration="6058000" />
+      <workItem from="1548028295294" duration="2930000" />
     </task>
     <task id="LOCAL-00001" summary="1,添加打印输出颜色设置">
       <created>1546399816511</created>
@@ -235,11 +224,25 @@
       <option name="project" value="LOCAL" />
       <updated>1546843491734</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1,提交文件下载示例">
+      <created>1547452364638</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547452364638</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1,提交局域网socket长连接，心跳包，异常未处理。">
+      <created>1547769989934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547769989934</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77035000" />
+    <option name="totallyTimeSpent" value="120550000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -252,8 +255,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1008" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.23344018" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.24679486" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.20864947" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -266,7 +270,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50106835" side_tool="true" weight="0.4259681" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.38838267" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3875" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32915717" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.36104783" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -399,20 +403,13 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="1,添加打印输出颜色设置" />
     <MESSAGE value="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="1,提交局域网post带参请求，并使用cJSON处理简单json数据" />
+    <MESSAGE value="1,提交文件下载示例" />
+    <MESSAGE value="1,提交局域网socket长连接，心跳包，异常未处理。" />
+    <option name="LAST_COMMIT_MESSAGE" value="1,提交局域网socket长连接，心跳包，异常未处理。" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/include/x86_64-linux-gnu/bits/socket.h" />
-    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcodes.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#43#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcodes.c" />
     <entry file="file://$APPLICATION_HOME_DIR$/bin/cmake/linux/share/cmake-3.13/Modules/FindPackageHandleStandardArgs.cmake">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -427,9 +424,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/operatorhead.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/operatorhead.h" />
     <entry file="file://$PROJECT_DIR$/com.ming.code/tinyhttp/simpleclient.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -458,30 +453,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/main.c">
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
-          <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#2116#2133#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.h">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        <state relative-caret-position="221">
+          <caret line="82" column="164" lean-forward="true" selection-start-line="82" selection-start-column="164" selection-end-line="82" selection-end-column="164" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/cluster_curl.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7752">
-          <caret line="456" column="37" selection-start-line="456" selection-start-column="37" selection-end-line="456" selection-end-column="37" />
+        <state relative-caret-position="271">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
           <folding>
             <element signature="e#135#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/support.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="e#42#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/operatorhead.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/blogcodes.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#43#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/socket/sendrecv.cpp" />
+    <entry file="file:///usr/include/x86_64-linux-gnu/curl/system.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="362" column="12" selection-start-line="362" selection-start-column="12" selection-end-line="362" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#99#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/socket/externalsocket.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <element signature="e#44#62#0" expanded="true" />
+            <element signature="e#140#230#0" expanded="true" />
+            <element signature="e#237#299#0" expanded="true" />
+            <element signature="e#1851#2008#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/method.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/socket/sendrecv.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+          <folding>
+            <element signature="e#44#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -489,17 +562,7 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com.ming.code/libcurl/request/libcurlclient.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
         </state>
       </provider>
     </entry>
