@@ -32,3 +32,27 @@ aux_source_directory(. DIR_SRCS)
 add_executable(CMakeDemo ${DIR_SRCS})
 
 target_link_libraries (CMakeDemo  ${EXTRA_LIBS})
+
+
+# 指定安装路径
+install (TARGETS CMakeDemo DESTINATION bin)
+install (FILES "${PROJECT_BINARY_DIR}/config.h"
+        DESTINATION include)
+
+# 启用测试
+enable_testing()
+
+# 测试程序是否成功运行
+add_test (test_run CMakeDemo 5 2)
+
+# 测试帮助信息是否可以正常提示
+add_test (test_usage CMakeDemo)
+set_tests_properties (test_usage
+        PROPERTIES PASS_REGULAR_EXPRESSION "Usage: .* base exponent")
+
+# 测试 5 的平方
+ add_test (test_5_2 Demo 5 2)
+
+ set_tests_properties (test_5_2
+  PROPERTIES PASS_REGULAR_EXPRESSION "is 25")
+

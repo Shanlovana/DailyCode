@@ -7,4 +7,6 @@
 
 #endif //CMAKEDEMO_MATHUTILS_H
 
-extern void hello();
+extern int hello(int num);
+
+extern double power(double base, int exponent);

@@ -3,3 +3,7 @@
 aux_source_directory(. DIR_LIB_SRCS)
 # 指定生成 MathUtils 链接库
 add_library (MathUtils ${DIR_LIB_SRCS})
+
+# 指定 MathFunctions 库的安装路径
+install (TARGETS MathUtils DESTINATION bin)
+install (FILES MathUtils.h DESTINATION include)
