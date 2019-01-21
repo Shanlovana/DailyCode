@@ -6,3 +6,5 @@
 #define CMAKEDEMO_MATHUTILS_H
 
 #endif //CMAKEDEMO_MATHUTILS_H
+
+extern void hello();

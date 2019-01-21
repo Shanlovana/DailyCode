@@ -1,0 +1,2 @@
+#cmakedefine USE_MATH_LIB
+/*#cmakedefine USE_MATH_LIB*/
