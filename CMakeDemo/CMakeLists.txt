@@ -43,9 +43,36 @@ add_executable(CMakeDemo ${DIR_SRCS})
 
 target_link_libraries(CMakeDemo ${EXTRA_LIBS})
 
+#导入cJSON
+set(CJSON_LIBRARY "-cJSON")
+find_package(cJSON REQUIRED)
+include_directories(${cJSON_INCLUDE_DIR})
+target_link_libraries(CMakeDemo ${CJSON_LIBRARIES})
+
 
 # 指定安装路径
 install(TARGETS CMakeDemo DESTINATION bin)
 install(FILES "${PROJECT_BINARY_DIR}/config.h"
         DESTINATION include)
 
+
+
+# 构建一个 CPack 安装包
+include (InstallRequiredSystemLibraries)
+SET(CPACK_CMAKE_GENERATOR "Unix Makefiles")
+SET(CPACK_GENERATOR "STGZ;TGZ;TZ")
+
+set (CPACK_RESOURCE_FILE_LICENSE
+        "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+
+SET(CPACK_PACKAGE_NAME "CMakeDemo")
+SET(CPACK_PACKAGE_VENDOR "Kitware")
+SET(CPACK_PACKAGE_VERSION "2.5.0")
+SET(CPACK_PACKAGE_VERSION_MAJOR "2")
+SET(CPACK_PACKAGE_VERSION_MINOR "5")
+SET(CPACK_PACKAGE_VERSION_PATCH "0")
+
+SET(CPACK_SYSTEM_NAME "Linux-i686")
+SET(CPACK_TOPLEVEL_TAG "Linux-i686")
+
+include (CPack)

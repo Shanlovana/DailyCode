@@ -5,6 +5,7 @@
 
 #include <MathUtils.h>
 #include <stdlib.h>
+#include <cjson/cJSON.h>
 
 #else
 #include <math.h>
@@ -32,6 +33,18 @@ int main(int argc, char *argv[]) {
 
 #endif
     printf("%s Version %d.%d  \n",argv[0],VERSIONCODEMAJOR,VERSIONCODEMINOR);
+
+
+    char *post_str = NULL;
+    cJSON *root = cJSON_CreateObject();
+
+    cJSON_AddStringToObject(root, "user", "为所欲为");
+    cJSON_AddStringToObject(root, "pwd", "hkcw3cjbc");
+    post_str = cJSON_Print(root);
+    cJSON_Delete(root);
+    root = NULL;
+    printf("post_str is %s \n",post_str);
+
     return 0;
 }
 
