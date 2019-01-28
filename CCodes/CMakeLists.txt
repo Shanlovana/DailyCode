@@ -10,7 +10,7 @@ add_executable(CCodes com.ming.code/main.c com.ming.code/blogcode/support.c com.
         com.ming.code/tinyhttp/smarthttp.c com.ming.code/tinyhttp/simpleclient.c com.ming.code/libcurl/request/cluster_curl.c com.ming.code/libcurl/request/cluster_curl.h
         com.ming.code/libcurl/request/libcurlclient.c com.ming.code/easylogger/port/elog_port.c
         com.ming.code/easylogger/src/elog.c com.ming.code/easylogger/src/elog_async.c com.ming.code/easylogger/src/elog_buf.c com.ming.code/easylogger/src/elog_utils.c
-        com.ming.code/blogcode/method.h com.ming.code/libcurl/socket/externalsocket.c com.ming.code/libcurl/socket/sendrecv.c)
+        com.ming.code/blogcode/method.h com.ming.code/libcurl/socket/externalsocket.c  com.ming.code/libcurl/socket/sendrecvheart.c)
 
 
 

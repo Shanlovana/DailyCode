@@ -11,3 +11,4 @@
 /captures
 .externalNativeBuild
 /cmake-build-debug
+/.idea
