@@ -10,7 +10,6 @@
 
 #endif //CPPCODES_CPPBLOGCODE_H
 using std::cout;
-using std::numeric_limits;
 using std::endl;
 
 class Person {
@@ -23,7 +22,8 @@ public:
     Person() {
         cout << "Person is being created without param" << endl;
     };
-    ~Person(){
+
+    ~Person() {
         cout << "Person is being deleted " << endl;
     };  // 这是析构函数声明
 
@@ -40,6 +40,13 @@ public:
     double breadth;        // 宽度
     double height;         // 高度
 
+    friend void printBreadth(Box box){// 请注意：printWidth() 不是任何类的成员函数
+        /** 因为 printWidth() 是 Box 的友元，它可以直接访问该类的任何成员 */
+        cout << "breadth of box : " << box.breadth <<endl;
+    }
+    int compare(Box box){
+        return this->getVolume()>box.getVolume();
+    }
     double getVolume(void)  // 返回体积
     {
         return length * breadth * height;
@@ -102,6 +109,38 @@ public:
     }
 };
 
+class AllLife {
+private:
+    int *ptr;
+public:
+    AllLife(int len) {//构造函数
+        cout << "using alllife  constructor" << endl;
+        // 为指针分配内存
+        ptr = new int;
+        *ptr = len;
+    };
+
+    AllLife(const AllLife &obj) {
+        cout << "using alllife copy constructor and location mem for pointer  ptr " << endl;
+        ptr = new int;
+        *ptr = *obj.ptr; // 拷贝值
+    }
+
+    ~AllLife() {//析构函数
+        cout << "release ptr memory" << endl;
+        delete (ptr);
+
+    }
+
+    int getLength() {
+        return *ptr;
+    }
+
+    void printLength() {
+        cout << "AllLife size is " << getLength() << endl;
+    }
+};
+
 
 void print_basic_data_types();
 
@@ -110,3 +149,5 @@ void set_print_person();
 void set_print_boxes();
 
 void set_print_student();
+
+void set_print_alllife();

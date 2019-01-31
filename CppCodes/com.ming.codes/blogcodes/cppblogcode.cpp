@@ -80,6 +80,7 @@ void  set_print_boxes(){
     Box Box1;                // 声明 Box1，类型为 Box
     Box Box2;                // 声明 Box2，类型为 Box
     double volume = 0.0;     // 用于存储体积
+    Box *ptrBox;                // Declare pointer to a class.
 
     // box 1 详述
     Box1.setLength(6.0);
@@ -91,13 +92,26 @@ void  set_print_boxes(){
     Box2.setBreadth(13.0);
     Box2.setHeight(10.0);
 
+    ptrBox = &Box1;
+    cout << "ptrBox getVolume is :" << ptrBox->getVolume() <<endl;
+
     // box 1 的体积
     volume = Box1.getVolume();
     cout << "Box1 getVolume is :" << volume <<endl;
+    printBreadth(Box1);
 
     // box 2 的体积
     volume = Box2.getVolume();
     cout << "Box2 getVolume is :" << volume <<endl;
+    if(Box1.compare(Box2))
+    {
+        cout << "Box2 is smaller than Box1" <<endl;
+    }
+    else
+    {
+        cout << "Box2 is equal to or larger than Box1" <<endl;
+    }
+
 }
 
 void set_print_student(){
@@ -111,4 +125,9 @@ void set_print_student(){
     cout << "student getAddress is :" << littleStudent.getAddress() <<endl;
 }
 
-
+void set_print_alllife(){
+    AllLife allLife(100);
+    allLife.printLength();
+    AllLife allLif=allLif;
+    allLif.printLength();
+}

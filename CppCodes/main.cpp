@@ -7,5 +7,7 @@ int main() {
     set_print_person();
     set_print_boxes();
     set_print_student();
+    set_print_alllife();
+
     return 0;
 }
