@@ -77,9 +77,9 @@ public:
     void setHeight(double height) {
         Box::height = height;
     }
+
     // 重载 + 运算符，用于把两个 Box 对象相加
-    Box operator+(const Box& b)
-    {
+    Box operator+(const Box &b) {
         Box box;
         box.length = this->length + b.length;
         box.breadth = this->breadth + b.breadth;
@@ -151,6 +151,7 @@ public:
         cout << "AllLife size is " << getLength() << endl;
     }
 };
+
 //基类
 class Shape {
 public:
@@ -162,26 +163,48 @@ public:
         height = h;
     }
 
+public:
+    Shape(int a = 0, int b = 0) {
+        width = a;
+        height = b;
+    }
+
+    virtual int getArea() {
+        cout << "Parent class area :" << endl;
+        return 0;
+    }
+
 protected:
     int width;
     int height;
 };
+
 // 基类 PaintCost
-class PaintCost
-{
+class PaintCost {
 public:
-    int getCost(int area)
-    {
+    int getCost(int area) {
         return area * 12;
     }
 };
+
 // 派生类
-class Rectangle: public Shape,public PaintCost
-{
+class Rectangle : public Shape, public PaintCost {
 public:
-    int getArea()
-    {
+    Rectangle(int a = 0, int b = 0) : Shape(a, b) {}
+
+    int getArea() {
+        cout << "Rectangle class area :" << (width * height) << endl;
         return (width * height);
+    }
+};
+
+class Triangle : public Shape {
+public:
+    Triangle(int a = 0, int b = 0) : Shape(a, b) {}
+
+    int getArea() {
+        cout << "Triangle class area :" << (width * height / 2) << endl;
+        return (width * height / 2);
     }
 };
 
@@ -196,3 +219,5 @@ void set_print_student();
 void set_print_alllife();
 
 void set_print_inherit();
+
+void set_print_polymorphism();

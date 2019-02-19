@@ -9,6 +9,7 @@ int main() {
     set_print_student();
     set_print_alllife();
     set_print_inherit();
+    set_print_polymorphism();
 
     return 0;
 }

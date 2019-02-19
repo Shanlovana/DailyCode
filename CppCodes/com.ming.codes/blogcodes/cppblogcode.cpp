@@ -142,3 +142,19 @@ void set_print_inherit() {
     cout << "rectangle total  area is :" << area << endl;
     cout << "rectangle getCost   is :" << rectangle.getCost(area) << endl;
 }
+
+void set_print_polymorphism() {
+    Shape *shape;
+    Rectangle rec(10, 7);
+    Triangle tri(10, 5);
+
+    // 存储矩形的地址
+    shape = &rec;
+    // 调用矩形的求面积函数 area
+    shape->getArea();
+
+    // 存储三角形的地址
+    shape = &tri;
+    // 调用三角形的求面积函数 area
+    shape->getArea();
+}
