@@ -40,13 +40,15 @@ public:
     double breadth;        // 宽度
     double height;         // 高度
 
-    friend void printBreadth(Box box){// 请注意：printWidth() 不是任何类的成员函数
+    friend void printBreadth(Box box) {// 请注意：printWidth() 不是任何类的成员函数
         /** 因为 printWidth() 是 Box 的友元，它可以直接访问该类的任何成员 */
-        cout << "breadth of box : " << box.breadth <<endl;
+        cout << "breadth of box : " << box.breadth << endl;
     }
-    int compare(Box box){
-        return this->getVolume()>box.getVolume();
+
+    int compare(Box box) {
+        return this->getVolume() > box.getVolume();
     }
+
     double getVolume(void)  // 返回体积
     {
         return length * breadth * height;
@@ -74,6 +76,15 @@ public:
 
     void setHeight(double height) {
         Box::height = height;
+    }
+    // 重载 + 运算符，用于把两个 Box 对象相加
+    Box operator+(const Box& b)
+    {
+        Box box;
+        box.length = this->length + b.length;
+        box.breadth = this->breadth + b.breadth;
+        box.height = this->height + b.height;
+        return box;
     }
 };
 
@@ -140,7 +151,39 @@ public:
         cout << "AllLife size is " << getLength() << endl;
     }
 };
+//基类
+class Shape {
+public:
+    void setWidth(int w) {
+        width = w;
+    }
 
+    void setHeight(int h) {
+        height = h;
+    }
+
+protected:
+    int width;
+    int height;
+};
+// 基类 PaintCost
+class PaintCost
+{
+public:
+    int getCost(int area)
+    {
+        return area * 12;
+    }
+};
+// 派生类
+class Rectangle: public Shape,public PaintCost
+{
+public:
+    int getArea()
+    {
+        return (width * height);
+    }
+};
 
 void print_basic_data_types();
 
@@ -151,3 +194,5 @@ void set_print_boxes();
 void set_print_student();
 
 void set_print_alllife();
+
+void set_print_inherit();

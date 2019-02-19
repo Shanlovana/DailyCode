@@ -65,7 +65,7 @@ void print_basic_data_types() {
 
 void set_print_person() {
     Person zhang;
-    Person li(19,29);
+    Person li(19, 29);
     zhang.age = 19;
     zhang.id = 13952;
     zhang.name = 'i';
@@ -76,9 +76,10 @@ void set_print_person() {
     cout << "li.age is " << li.age << "  li.id is " << li.id << endl;
 }
 
-void  set_print_boxes(){
+void set_print_boxes() {
     Box Box1;                // 声明 Box1，类型为 Box
     Box Box2;                // 声明 Box2，类型为 Box
+    Box Box3;                // 声明 Box3，类型为 Box
     double volume = 0.0;     // 用于存储体积
     Box *ptrBox;                // Declare pointer to a class.
 
@@ -93,41 +94,51 @@ void  set_print_boxes(){
     Box2.setHeight(10.0);
 
     ptrBox = &Box1;
-    cout << "ptrBox getVolume is :" << ptrBox->getVolume() <<endl;
+    cout << "ptrBox getVolume is :" << ptrBox->getVolume() << endl;
 
     // box 1 的体积
     volume = Box1.getVolume();
-    cout << "Box1 getVolume is :" << volume <<endl;
+    cout << "Box1 getVolume is :" << volume << endl;
     printBreadth(Box1);
 
     // box 2 的体积
     volume = Box2.getVolume();
-    cout << "Box2 getVolume is :" << volume <<endl;
-    if(Box1.compare(Box2))
-    {
-        cout << "Box2 is smaller than Box1" <<endl;
+    cout << "Box2 getVolume is :" << volume << endl;
+    if (Box1.compare(Box2)) {
+        cout << "Box2 is smaller than Box1" << endl;
+    } else {
+        cout << "Box2 is equal to or larger than Box1" << endl;
     }
-    else
-    {
-        cout << "Box2 is equal to or larger than Box1" <<endl;
-    }
+    Box3 = Box1 + Box2;
+    // box 3 的体积
+    volume = Box3.getVolume();
+    cout << "Box3 getVolume is :" << volume << endl;
 
 }
 
-void set_print_student(){
+void set_print_student() {
     Student student;
-    student.name='Y';
-    cout << "student name is :" << student.name <<endl;
+    student.name = 'Y';
+    cout << "student name is :" << student.name << endl;
     student.setClassroom('5');
-    cout << "student getClassroom is :" << student.getClassroom() <<endl;
+    cout << "student getClassroom is :" << student.getClassroom() << endl;
     LittleStudent littleStudent;
     littleStudent.setAddress('N');
-    cout << "student getAddress is :" << littleStudent.getAddress() <<endl;
+    cout << "student getAddress is :" << littleStudent.getAddress() << endl;
 }
 
-void set_print_alllife(){
+void set_print_alllife() {
     AllLife allLife(100);
     allLife.printLength();
-    AllLife allLif=allLif;
+    AllLife allLif = allLif;
     allLif.printLength();
+}
+
+void set_print_inherit() {
+    Rectangle rectangle;
+    rectangle.setHeight(20);
+    rectangle.setWidth(12);
+    int area = rectangle.getArea();
+    cout << "rectangle total  area is :" << area << endl;
+    cout << "rectangle getCost   is :" << rectangle.getCost(area) << endl;
 }

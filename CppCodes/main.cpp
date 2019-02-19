@@ -8,6 +8,7 @@ int main() {
     set_print_boxes();
     set_print_student();
     set_print_alllife();
+    set_print_inherit();
 
     return 0;
 }
