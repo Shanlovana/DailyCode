@@ -221,3 +221,5 @@ void set_print_alllife();
 void set_print_inherit();
 
 void set_print_polymorphism();
+
+void test_files();

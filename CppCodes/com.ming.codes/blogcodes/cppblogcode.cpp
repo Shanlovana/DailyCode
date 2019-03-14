@@ -6,12 +6,10 @@
 #include<iostream>
 #include<string>
 #include <limits>
+#include <fstream>
 
+using namespace std;
 
-using std::cout;
-using std::numeric_limits;
-using std::endl;
-using std::string;
 
 void print_basic_data_types() {
     cout << "type: \t\t" << "************size begin **************" << endl;
@@ -157,4 +155,93 @@ void set_print_polymorphism() {
     shape = &tri;
     // 调用三角形的求面积函数 area
     shape->getArea();
+}
+
+
+//向文件内部写入数据，并将数据读出
+void file_wr() {
+    char data[100];
+    //向文件写入数据
+    ofstream outfile;
+    outfile.open("test.txt");
+    cout << "Write to the file" << endl;
+    cout << "Enter your name:" << endl;
+    cin.getline(data, 100);
+    outfile << data << endl;
+    cout << "Enter your age:" << endl;
+    cin >> data;
+    cin.ignore();
+    outfile << data << endl;
+    outfile.close();
+    //从文件读取数据
+    ifstream infile;
+    infile.open("test.txt");
+    cout << "Read from the file" << endl;
+    infile >> data;
+    cout << data << endl;
+    infile >> data;
+    cout << data << endl;
+    infile.close();
+}
+
+
+//将数据从一文件复制到另一文件中
+void file_copy() {
+    char data[100];
+    ifstream infile;
+    ofstream outfile;
+    infile.open("test.txt");
+    outfile.open("test_1.txt");
+    cout << "copy from test.txt to test_1.txt" << endl;
+    while (!infile.eof()) {
+        infile >> data;
+        cout << data << endl;
+        outfile << data << endl;
+    }
+    infile.close();
+    outfile.close();
+}
+
+
+void test_files() {
+    char data[100];
+
+    // 以写模式打开文件
+    ofstream outfile;
+    outfile.open("/com.ming.codes/res/IntelGFXCoin.log");
+
+    cout << "Writing to the file" << endl;
+    cout << "Enter your name: ";
+    cin.getline(data, 100);
+    // 向文件写入用户输入的数据
+    outfile << data << endl;
+
+    cout << "Enter your age: ";
+    cin >> data;
+    cin.ignore();
+
+    // 再次向文件写入用户输入的数据
+    outfile << data << endl;
+
+    // 关闭打开的文件
+    outfile.close();
+    // 以读模式打开文件
+    ifstream infile;
+    infile.open("/com.ming.codes/res/IntelGFXCoin.log");
+
+    cout << "Reading from the file" << endl;
+    infile >> data;
+
+    // 在屏幕上写入数据
+    cout << data << endl;
+
+    // 再次从文件读取数据，并显示它
+    infile >> data;
+    cout << data << endl;
+
+    // 关闭打开的文件
+    infile.close();
+
+    file_wr();
+    file_copy();
 }
