@@ -11,15 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/com.ming.code/blogcode/socket_client_tcp.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.ming.code/blogcode/socket_client_udp.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.ming.code/blogcode/socket_server_tcp.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.ming.code/blogcode/socket_server_udp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CppCodes/com.ming.codes/leetcode/ReplaceSpace.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../CppCodes/com.ming.codes/leetcode/ReplaceSpace.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="3e36566b-20f8-4975-91f1-f1d42cb437d8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/socket_client_udp.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="368">
+              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="e#40#58#0" expanded="true" />
               </folding>
@@ -273,7 +265,7 @@
       <workItem from="1548028295294" duration="2930000" />
       <workItem from="1548055419373" duration="1012000" />
       <workItem from="1565087376190" duration="820000" />
-      <workItem from="1565327198475" duration="4858000" />
+      <workItem from="1565327198475" duration="5520000" />
     </task>
     <task id="LOCAL-00001" summary="1,添加打印输出颜色设置">
       <created>1546399816511</created>
@@ -310,11 +302,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548056399888</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1,提交tcp udp 实现副饿无端与客户端代码">
+      <created>1565332691422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565332691422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127240000" />
+    <option name="totallyTimeSpent" value="127902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,6 +326,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918434" visible="true" weight="0.2553419" />
       <window_info id="Structure" order="1" sideWeight="0.5008157" side_tool="true" weight="0.20864947" />
@@ -477,7 +477,8 @@
     <MESSAGE value="1,提交文件下载示例" />
     <MESSAGE value="1,提交局域网socket长连接，心跳包，异常未处理。" />
     <MESSAGE value="1,CMake示例项目,提交添加其他第三方开源库（以cjson为示例）代码。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1,CMake示例项目,提交添加其他第三方开源库（以cjson为示例）代码。" />
+    <MESSAGE value="1,提交tcp udp 实现副饿无端与客户端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="1,提交tcp udp 实现副饿无端与客户端代码" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/include/x86_64-linux-gnu/bits/socket.h" />
@@ -652,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com.ming.code/blogcode/socket_client_udp.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="368">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
             <element signature="e#40#58#0" expanded="true" />
           </folding>
