@@ -34,7 +34,9 @@ using namespace std;
 class Solution {
 public:
     int replaceSpace(char *str, int length) {
-
+        if (str == NULL || length < 0) {
+            return -1;
+        }
         int spaceNum = 0;
         for (int i = 0; i < length; i++) {
             if (str[i] == ' ') {
