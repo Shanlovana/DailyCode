@@ -22,7 +22,7 @@ typedef int ElementType;
 typedef struct ListNode {
     ElementType Element;        //    数据域，存放数据
     ListNode *Next;        //    指向下一个链表节点
-} Node, *PNode;
+};
 
 ListNode *createListNode(int value) {
     ListNode *pNode = new ListNode();
