@@ -40,8 +40,7 @@ typedef struct BinaryTreeNode {
 BinaryTreeNode *CreateBinaryTreeNode(int value) {
     BinaryTreeNode *pNode = new BinaryTreeNode();
     pNode->elementType = value;
-    pNode->pRightBinaryTreeNode = nullptr;
-    pNode->pLeftBinaryTreeNode = nullptr;
+    pNode->pRightBinaryTreeNode = pNode->pLeftBinaryTreeNode = nullptr;
     return pNode;
 }
 
