@@ -12,5 +12,5 @@ set(LIBRARIES
         pthread)
 
 add_executable(CppCodes main.cpp com.ming.codes/blogcodes/Cppblogcode.cpp com.ming.codes/blogcodes/Cppblogcode.h
-        com.ming.codes/leetcode/FindDuplicate.cpp com.ming.codes/blogcodes/googletest.cpp com.ming.codes/leetcode/ReplaceSpace.cpp com.ming.codes/leetcode/PrintListInReOrder.cpp com.ming.codes/leetcode/ConstructBinaryTree.cpp com.ming.codes/leetcode/NextNodeInBinaryTree.cpp)
+        com.ming.codes/codinginterview/FindDuplicate.cpp com.ming.codes/blogcodes/googletest.cpp com.ming.codes/codinginterview/ReplaceSpace.cpp com.ming.codes/codinginterview/PrintListInReOrder.cpp com.ming.codes/codinginterview/ConstructBinaryTree.cpp com.ming.codes/codinginterview/NextNodeInBinaryTree.cpp com.ming.codes/codinginterview/QueueInTwoStack.cpp com.ming.codes/codinginterview/MinNumberInRotatedArray.cpp)
 target_link_libraries(CppCodes ${LIBRARIES})
