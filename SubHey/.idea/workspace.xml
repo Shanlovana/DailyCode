@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8c35aa7-7bcc-473e-bc23-bdc9bd02d5f4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../CppCodes/com.ming.codes/codinginterview/ReverseLinkedList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/consumer/Chef.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/consumer/ConsumerPerson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/consumer/Meal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/consumer/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CppCodes/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CppCodes/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="c8c35aa7-7bcc-473e-bc23-bdc9bd02d5f4" name="Default" comment="add consumer">
+      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/sigleton/Singleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/heng/subhey/sigleton/StaticInnerSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/ConsumerPerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="15" column="25" selection-end-line="33" selection-end-column="1" />
+            <state relative-caret-position="349">
+              <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
               <folding>
                 <element signature="e#164#165#0" expanded="true" />
                 <element signature="e#208#209#0" expanded="true" />
@@ -78,10 +73,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/Restaurant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="567">
+              <caret line="27" column="5" selection-end-line="28" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/sigleton/StaticInnerSingleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <folding>
+                <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#508#509#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/sigleton/Singleton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+              <folding>
+                <element signature="e#1879#1880#0" expanded="true" />
+                <element signature="e#1918#1919#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,6 +139,8 @@
         <option value="$PROJECT_DIR$/src/com/heng/subhey/consumer/Chef.java" />
         <option value="$PROJECT_DIR$/src/com/heng/subhey/consumer/Meal.java" />
         <option value="$PROJECT_DIR$/src/com/heng/subhey/consumer/Restaurant.java" />
+        <option value="$PROJECT_DIR$/src/com/heng/subhey/sigleton/StaticInnerSingleton.java" />
+        <option value="$PROJECT_DIR$/src/com/heng/subhey/sigleton/Singleton.java" />
       </list>
     </option>
   </component>
@@ -159,7 +182,7 @@
               <item name="SubHey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="subhey" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="sigleton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SubHey" type="b2602c69:ProjectViewProjectNode" />
@@ -277,16 +300,23 @@
       <workItem from="1544168094968" duration="2471000" />
       <workItem from="1544188904839" duration="14000" />
       <workItem from="1545204641806" duration="807000" />
-      <workItem from="1566269567567" duration="607000" />
+      <workItem from="1566269567567" duration="3742000" />
     </task>
+    <task id="LOCAL-00001" summary="add consumer">
+      <created>1566270387660</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566270387660</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13573000" />
+    <option name="totallyTimeSpent" value="16708000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="996" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="25" width="1920" height="996" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18856838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -322,6 +352,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add consumer" />
+    <option name="LAST_COMMIT_MESSAGE" value="add consumer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/annotation/Chou.java">
@@ -440,16 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/Restaurant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/Chef.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -463,11 +487,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/ConsumerPerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="15" column="25" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="349">
+          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="e#164#165#0" expanded="true" />
             <element signature="e#208#209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/consumer/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="5" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/sigleton/Singleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+          <folding>
+            <element signature="e#1879#1880#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/heng/subhey/sigleton/StaticInnerSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
           </folding>
         </state>
       </provider>
