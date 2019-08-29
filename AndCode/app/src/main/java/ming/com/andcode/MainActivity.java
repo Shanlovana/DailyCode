@@ -6,23 +6,28 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 
 
 import ming.com.andcode.dagger2.DaggerActivity;
 import ming.com.andcode.jni.JNIManage;
+import ming.com.andcode.lifebind.LifecycleDetector;
+import ming.com.andcode.lifebind.TestLife;
 import ming.com.andcode.mvp.MVPActivity;
 import ming.com.basemodule.Books;
 
 @Route(path = "/app/MainActivity", group = "demo")
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "LoginInterceptor";
-    TextView tv_mvp, tv_arouter,tv_dagger;
+    TextView tv_mvp, tv_arouter, tv_dagger;
+    ImageView glide;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -39,9 +44,13 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.sample_text);
         tv_mvp = findViewById(R.id.tv_entry_mvp);
         tv_arouter = findViewById(R.id.tv_entry_arouter);
-        tv_dagger= findViewById(R.id.tv_entry_daggerr);
+        tv_dagger = findViewById(R.id.tv_entry_daggerr);
+        glide = findViewById(R.id.iv_glide);
         tv.setText(JNIManage.getInstance().getNums());
         setOnClicks();
+        Glide.with(this).load("https://avatars3.githubusercontent.com/u/24930299?s=460&v=4").into(glide);
+        TestLife testLife=new TestLife();
+        LifecycleDetector.getInstance().observer(this,testLife);
     }
 
     private void setOnClicks() {

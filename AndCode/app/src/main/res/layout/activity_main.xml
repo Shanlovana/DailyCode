@@ -61,4 +61,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_entry_arouter" />
 
+    <ImageView
+        android:id="@+id/iv_glide"
+        android:layout_width="@dimen/marginTop_50"
+        android:layout_height="@dimen/marginTop_50"
+        android:layout_marginTop="@dimen/main_text_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_entry_daggerr"/>
+
 </android.support.constraint.ConstraintLayout>
